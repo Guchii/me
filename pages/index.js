@@ -1,10 +1,21 @@
+import Head from "next/head";
 export default function Home() {
     return (
-        <div>
-            <div className="d-flex flex-column justify-content-center align-items-center">
-                <h1 className="display-1 fw-bold">Shivom Srivastava</h1>
-                <p className="lead">Full stack developer</p>
+        <div className="container-fluid">
+            <div className="d-flex flex-column justify-content-center align-items-center text-center">
+                <h1 className="display-2 fw-bold"
+                   
+                >
+                    <span className="text-primary">Shivom</span> Srivastava
+                </h1>
+                <p className="lead fw-bolder">
+                    Frontend Developer, Learning Data Scientist, Shōnen Anime
+                    Enthusiast
+                </p>
             </div>
+            <Head>
+                <title>Shivom Srivastava | Home</title>
+            </Head>
         </div>
     );
 }
