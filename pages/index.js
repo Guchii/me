@@ -3,9 +3,7 @@ export default function Home() {
     return (
         <div className="container-fluid">
             <div className="d-flex flex-column justify-content-center align-items-center text-center">
-                <h1 className="display-2 fw-bold"
-                   
-                >
+                <h1 className="display-2 fw-bold">
                     <span className="text-primary">Shivom</span> Srivastava
                 </h1>
                 <p className="lead fw-bolder">
