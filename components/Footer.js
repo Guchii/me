@@ -15,10 +15,8 @@ const Footer = () => {
                 <AiFillMail />
                 <FaSteam />
             </div>
-            <span className="fs-5">
-                made with <FaBootstrap color="purple" />,{" "}
-                <FaReact color="blue" /> ,
-                <SiNextdotjs />, <AiTwotoneHeart color="red" />
+            <span className="fw-bold">
+                made with <AiTwotoneHeart color="red" />{", "}<SiNextdotjs className="ms-1"/>
             </span>
         </div>
     );
