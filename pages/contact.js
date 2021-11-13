@@ -11,16 +11,17 @@ const Contact = () => {
           method="POST">
           <div className="mb-3">
             <label htmlFor="name" className="form-label">Name</label>
-            <input type="text" id="name" name="name" className="form-control" placeholder="guchiii srivastava" />
+            <input type="text" id="name" name="name" className="form-control" placeholder="guchiii srivastava" required/>
           </div>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">Email</label>
-            <input type="email" id="email" name="email" className="form-control" placeholder="guchiii@mail.com" />
+            <input type="email" id="email" name="email" className="form-control" placeholder="guchiii@mail.com" required/>
           </div>
           <div className="mb-3">
             <label htmlFor="message" className="form-label">Message</label>
             <textarea id="message" rows="3" name="message" className="form-control" placeholder="#include <iostream>"
               style={{ resize: "none" }}
+              required
             />
           </div>
           <button type="submit" className="btn btn-primary fw-bold">Submit Response</button>

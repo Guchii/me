@@ -6,7 +6,7 @@ export default function Home() {
                 <h1 className="display-2 fw-bold">
                     <span className="text-primary">Shivom</span> Srivastava
                 </h1>
-                <p className="lead fw-bolder">
+                <p className="lead">
                     Frontend Developer, Learning Data Scientist, Shōnen Anime
                     Enthusiast
                 </p>
