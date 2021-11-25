@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <>
       <div className="d-flex flex-column flex-lg-row justify-content-center align-items-center">
-        <Image src={Naruto} className="me-lg-5 mb-3 mb-lg-0" alt="naruto" width={1280 * 0.3} height={720 * 0.3} />
+        <Image src={Naruto} className="me-lg-5 mb-3 mb-lg-0" alt="naruto" width={1280 * 0.3} height={720 * 0.3} placeholder="blur" />
         <form className="card rounded p-3 shadow-lg" style={{ Height: '500px' }} name="contact" action="https://www.formingo.co/submit/9ef6d3c8-29ca-4a0b-afa0-d539a0ff7c28"
           method="POST">
           <div className="mb-3">

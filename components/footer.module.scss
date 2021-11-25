@@ -1,38 +1,21 @@
 $email-color: brown;
 $instagram-color: palevioletred;
-$steam-color: #405DE6;
+$steam-color: #405de6;
 
 .icons {
     // background-color: aquamarine;
     width: 200px;
+    
     a {
         text-decoration: none;
         color: inherit;
     }
 }
-
-.iconHover {
-    transform: scale(120%);
-    color: #333333;
-    transition: all 0.1s ease-in-out;
-    cursor: pointer;
-}
-
-.insta:hover {
-    @extend .iconHover;
-    color: $instagram-color;
-}
-
-.github:hover {
-    @extend .iconHover;
-}
-
-.email:hover {
-    @extend .iconHover;
-    color: $email-color;
-}
-
-.steam:hover {
-    @extend .iconHover;
-    color: $steam-color;
+.icon{
+    transition: 100ms all;
+    &:hover{
+        transform: scale(120%);
+        color: #333333;
+        cursor: pointer;
+    }
 }

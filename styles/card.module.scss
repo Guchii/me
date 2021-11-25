@@ -1,0 +1,11 @@
+.card {
+    width: 400px;
+    transition: 150ms all;
+    &:hover{
+        color: royalblue;
+        cursor: pointer;
+        transform: scale(103%);
+        z-index: 1000;
+        border: 1px royalblue solid;
+    }
+}

@@ -23,7 +23,7 @@ const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ">
                         <LinkItem isActive={router.pathname === "/"} href="/" text="Home" />
-                        <LinkItem isActive={router.pathname === "/work"} href="/work" text="Work" />
+                        <LinkItem isActive={router.pathname === "/projects"} href="/projects" text="Projects" />
                         <LinkItem isActive={router.pathname === "/contact"} href="/contact" text="Contact" />
                     </ul>
                 </div>
