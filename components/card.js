@@ -1,30 +1,38 @@
 import React from 'react'
 import Image from 'next/image'
 import Naruto from "../public/naruto1.jpg"
+import Firebase from "../public/firebase.svg"
+import ReactIcon from "../public/react.svg"
 import styles from "../styles/card.module.scss"
 
-function card({ pname, ptext }) {
+function Card({ pinfo }) {
     return (
-        <div className={styles.card + " card m-2"}>
-            <Image
+        <div className={styles.card + " card m-2 shadow"} onClick={()=>window.open(pinfo.link, "_blank")}>
+            {/* <Image
                 src={Naruto}
-                alt={pname}
+                alt={pinfo.name}
                 className="card-img-top"
                 placeholder="blur"
-            />
+            /> */}
             <div className="card-body">
-                <h4 className="card-title fw-bold"> {pname}</h4>
+                <h4 className="card-title fw-bold"> {pinfo.name}</h4>
                 <p className="card-text">
-                    {ptext}
+                    {pinfo.text}
                 </p>
+            </div>
+            <div className="bg-white d-flex position-absolute top-0 end-0 rounded ps-1 pe-2 py-2">
+                <Image src={Firebase} alt="icon" height="30" width="30" />
+                <Image src={ReactIcon} alt="icon" height="30" width="30" />
             </div>
         </div>
     )
 }
 
-card.defaultProps = {
-    pname: "Project Name",
-    ptext: "This is the project text"
+Card.defaultProps = {
+    pinfo: {
+        name: "Project Name",
+        text: "This is the project text"
+    }
 }
 
-export default card
+export default Card
