@@ -26,8 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         
-    - run: npm ci
-    - run: npm run export
+    - run: yarn install --frozen-lockfile
+    - run: yarn export
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
