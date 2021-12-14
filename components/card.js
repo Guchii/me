@@ -8,22 +8,16 @@ import styles from "../styles/card.module.scss"
 function Card({ pinfo }) {
     return (
         <div className={styles.card + " card m-2 shadow"} onClick={()=>window.open(pinfo.link, "_blank")}>
-            {/* <Image
-                src={Naruto}
-                alt={pinfo.name}
-                className="card-img-top"
-                placeholder="blur"
-            /> */}
             <div className="card-body">
                 <h4 className="card-title fw-bold"> {pinfo.name}</h4>
                 <p className="card-text">
                     {pinfo.text}
                 </p>
             </div>
-            <div className="bg-white d-flex position-absolute top-0 end-0 rounded ps-1 pe-2 py-2">
+            {/* <div className="bg-white d-flex position-absolute top-0 end-0 rounded ps-1 pe-2 py-2">
                 <Image src={Firebase} alt="icon" height="30" width="30" />
                 <Image src={ReactIcon} alt="icon" height="30" width="30" />
-            </div>
+            </div> */}
         </div>
     )
 }
