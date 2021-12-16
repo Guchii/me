@@ -18,7 +18,7 @@ function Card({ pinfo }) {
                         {pinfo.text}
                     </Text>
                     <Flex gap={2}>
-                        {pinfo.stack.map(ele => <Badge colorScheme={"purple"}>{ele}</Badge>)}
+                        {pinfo.stack.map((ele,index) => <Badge key={index} colorScheme={"purple"}>{ele}</Badge>)}
                     </Flex>
                 </Flex>
             </LinkBox>
