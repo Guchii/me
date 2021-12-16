@@ -14,8 +14,8 @@ export default function Home() {
                         My Name is Shivom Srivastava. I am a Frontend Developer, Learning Data Scientist, and an Anime Enthusiast.
                     </Text>
                     <Flex gap={3}>
-                        <Button colorScheme={"teal"} onClick={()=>router.push("/projects")}>My Projects</Button>
-                        <Button colorScheme={"teal"} onClick={()=>router.push("/skills")}>My Skills</Button>
+                        <Button colorScheme={"teal"} onClick={() => router.push("/projects")}>My Projects</Button>
+                        <Button colorScheme={"teal"} onClick={() => router.push("/skills")}>My Skills</Button>
                     </Flex>
 
                 </Flex>

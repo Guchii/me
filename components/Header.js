@@ -20,7 +20,7 @@ const Header = () => {
                     Shivom Srivastava
                 </Heading>
                 <Flex gap={4}>
-                    <LinkItem text="Home" href="/" />
+                    <LinkItem text="Home" href={"/"} />
                     <LinkItem text="Skills" href={"skills"} />
                     <LinkItem text="Projects" href="/projects" />
                     <LinkItem text="Blog" href={"/blog"} />
@@ -41,6 +41,6 @@ const Header = () => {
     );
 };
 
-const LinkItem = ({ text, href }) => <NextLink href={href || "/"}><Link>{text}</Link></NextLink>
+const LinkItem = ({ text, href }) => <NextLink href={href || "/"} passHref><Link>{text}</Link></NextLink>
 
 export default Header;
