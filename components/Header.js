@@ -1,46 +1,46 @@
-import { MdOutlineSegment } from "react-icons/md";
-import Link from "next/link";
-import classNames from "classnames";
-import { useRouter } from "next/router";
+import NextLink from "next/link"
+import { Flex, Heading, Link, Spacer, Button, Box, IconButton, useColorMode, useToast } from "@chakra-ui/react";
+import { BsFillMoonFill } from "react-icons/bs"
 const Header = () => {
-    const router = useRouter();
+    const { colorMode, toggleColorMode } = useColorMode();
+    const toast = useToast();
+    const toastIt = () => {
+        toast({
+            title: 'Not Available Now',
+            description: "Work in progress.",
+            status: 'error',
+            duration: 1000,
+            isClosable: true,
+        })
+    }
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-white p-4 border-top border-5 border-primary">
-            <div className="container-fluid">
-                <a className="navbar-brand"
-                >Shivom Srivastava</a>
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <MdOutlineSegment />
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav ">
-                        <LinkItem isActive={router.pathname === "/"} href="/" text="Home" />
-                        <LinkItem isActive={router.pathname === "/projects"} href="/projects" text="Projects" />
-                        <LinkItem isActive={router.pathname === "/contact"} href="/contact" text="Contact" />
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <>
+            <Flex p={6} gap={6} justifyContent={"flex-start"} alignItems={"center"} wrap={"wrap"}>
+                <Heading size={"md"}>
+                    Shivom Srivastava
+                </Heading>
+                <Flex gap={4}>
+                    <LinkItem text="Home" href="/" />
+                    <LinkItem text="Skills" href={"skills"} />
+                    <LinkItem text="Projects" href="/projects" />
+                    <LinkItem text="Blog" href={"/blog"} />
+                    <LinkItem text="Contact" href="/contact" />
+                </Flex>
+                <Spacer />
+                <Flex gap={3}>
+                    <IconButton
+                        aria-label='Search database'
+                        icon={<BsFillMoonFill />}
+                        onClick={toggleColorMode}
+                    />
+                    <Button onClick={toastIt} colorScheme='teal'>Resume</Button>
+                </Flex >
+            </Flex>
+        </>
+
     );
 };
 
-function LinkItem({ isActive, href, text }) {
-    const linkClassNames = classNames("nav-link", { "active": isActive })
-    return (
-        <li className="nav-item">
-            <Link href={href}>
-                <a className={linkClassNames}>{text}</a>
-            </Link>
-        </li>
-    )
-}
+const LinkItem = ({ text, href }) => <NextLink href={href || "/"}><Link>{text}</Link></NextLink>
 
 export default Header;

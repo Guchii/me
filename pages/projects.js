@@ -1,6 +1,6 @@
+import { Box, Flex } from '@chakra-ui/react'
 import Head from 'next/head'
 import Card from '../components/card'
-import styles from "../styles/work.module.scss"
 const Projects = () => {
     const projectsArray = [
         {
@@ -19,12 +19,14 @@ const Projects = () => {
         }
     ]
     return (
-        <div className="container d-flex flex-wrap justify-content-center align-items-center">
-            {projectsArray.map((project) => <Card pinfo={project} key={project.id} />)}
+        <>
+            <Flex gap={5} wrap={"wrap"} justifyContent={"center"} alignItems={"center"}>
+                {projectsArray.map((project) => <Card pinfo={project} key={project.id} />)}
+            </Flex>
             <Head>
                 <title>Shivom Srivastava | My Works</title>
             </Head>
-        </div>
+        </>
     )
 }
 
