@@ -3,11 +3,12 @@ import Head from "next/head"
 const Contact = () => {
   return (
     <>
-    <Head>
-      <title>
-        Contact Page | Shivom Srivastava
-      </title>
-    </Head>
+      <Head>
+        <title>
+          Contact Page | Shivom Srivastava
+        </title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤙</text></svg>"></link>
+      </Head>
       <Flex gap={"6"} direction={"row"} justifyContent={"center"} alignItems={"center"}>
         <Image src={"/naruto1.jpg"} className="me-lg-5 mb-3 mb-lg-0" alt="naruto" width={1280 * 0.3} height={720 * 0.3} />
         <Box boxShadow={"lg"} p={6} width={350} maxWidth={500}>
