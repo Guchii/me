@@ -24,7 +24,7 @@ const Projects = () => {
                 {projectsArray.map((project) => <Card pinfo={project} key={project.id} />)}
             </Flex>
             <Head>
-                <title>Shivom Srivastava | My Works</title>
+                <title>Projects | Shivom Srivastava</title>
             </Head>
         </>
     )

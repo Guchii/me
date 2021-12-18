@@ -1,8 +1,13 @@
 import { Box, Button, Flex, FormControl, FormHelperText, FormLabel, Image, Input, Textarea } from '@chakra-ui/react'
-
+import Head from "next/head"
 const Contact = () => {
   return (
     <>
+    <Head>
+      <title>
+        Contact Page | Shivom Srivastava
+      </title>
+    </Head>
       <Flex gap={"6"} direction={"row"} justifyContent={"center"} alignItems={"center"}>
         <Image src={"/naruto1.jpg"} className="me-lg-5 mb-3 mb-lg-0" alt="naruto" width={1280 * 0.3} height={720 * 0.3} />
         <Box boxShadow={"lg"} p={6} width={350} maxWidth={500}>
