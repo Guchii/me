@@ -11,10 +11,6 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta
-            name="google-site-verification"
-            content="umuE18l7ZJfhDqnvm0EA1YE40Wtc3ikWpkxM5FyEUE8"
-          />
-          <meta
             name="description"
             content="Hi, My name is Shivom Srivastava. I am a Frontend Developer, Learning Data Scientist and an Anime enthusiast. You can download my resume or contact me with the links present on this website. This website also has some of my micro projects embedded as well. Enjoy!"
           />
