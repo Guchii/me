@@ -7,21 +7,10 @@ import {
   Button,
   IconButton,
   useColorMode,
-  useToast,
 } from "@chakra-ui/react";
 import { BsFillMoonFill } from "react-icons/bs";
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const toast = useToast();
-  const toastIt = () => {
-    toast({
-      title: "Not Available Now",
-      description: "Work in progress.",
-      status: "error",
-      duration: 1000,
-      isClosable: true,
-    });
-  };
   return (
     <>
       <Flex
@@ -29,9 +18,9 @@ const Header = () => {
         gap={6}
         justifyContent={"flex-start"}
         alignItems={"center"}
-        wrap={"wrap"}
+        direction={{ sm: "column", lg: "row" }}
       >
-        <Heading size={"md"}>Shivom Srivastava</Heading>
+        <Heading size={"lg"}>Shivom Srivastava</Heading>
         <Flex gap={4}>
           <LinkItem text="Home" href={"/"} />
           <LinkItem text="Skills" href={"skills"} />
@@ -43,8 +32,7 @@ const Header = () => {
           />
           <LinkItem text="Contact" href="/contact" />
         </Flex>
-        <Spacer />
-        <Flex gap={3}>
+        <Flex gap={3} marginLeft={{ sm: "none", lg: "auto" }}>
           <IconButton
             aria-label="Search database"
             icon={<BsFillMoonFill />}

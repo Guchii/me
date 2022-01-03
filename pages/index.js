@@ -5,44 +5,34 @@ export default function Home() {
   const router = useRouter();
   return (
     <>
-      <Flex
-        alignItems={"center"}
-        maxWidth={"full"}
-        justifyContent={"center"}
-        gap={5}
-      >
-        <Flex direction="column" gap={4} maxWidth={"700px"}>
-          <Heading as="h1">👋 Hello There!</Heading>
-          <Text fontSize="xl">
-            My name is Shivom Srivastava. I am a frontend developer, a learning
-            data scientist, and an anime enthusiast.
-          </Text>
-          <Flex gap={3}>
-            <Button
-              colorScheme={"teal"}
-              onClick={() => router.push("/projects")}
-            >
-              My Projects
-            </Button>
-            <Button colorScheme={"teal"} onClick={() => router.push("/skills")}>
-              My Skills
-            </Button>
-          </Flex>
+      <Flex direction="column" gap={4} maxWidth={"700px"}>
+        <Heading as="h1">👋 Hello There!</Heading>
+        <Text fontSize="xl">
+          My name is Shivom Srivastava. I am a frontend developer, a learning
+          data scientist, and an anime enthusiast.
+        </Text>
+        <Flex gap={3} justifyContent={{ sm: "center", lg: "flex-start" }}>
+          <Button colorScheme={"teal"} onClick={() => router.push("/projects")}>
+            My Projects
+          </Button>
+          <Button colorScheme={"teal"} onClick={() => router.push("/skills")}>
+            My Skills
+          </Button>
         </Flex>
-        <Tooltip label="Yours Truely" hasArrow>
-          <Image
-            cursor={"pointer"}
-            borderRadius="full"
-            boxSize="300px"
-            src="https://github.com/guchii.png"
-            alt="Shivom Srivastava"
-            boxShadow={"md"}
-            sx={{
-              filter: "grayscale(50%)",
-            }}
-          />
-        </Tooltip>
       </Flex>
+      <Tooltip label="Yours Truely" hasArrow>
+        <Image
+          cursor={"pointer"}
+          borderRadius="full"
+          boxSize="300px"
+          src="https://github.com/guchii.png"
+          alt="Shivom Srivastava"
+          boxShadow={"md"}
+          sx={{
+            filter: "grayscale(50%)",
+          }}
+        />
+      </Tooltip>
       <Head>
         <title>Shivom Srivastava | Web Developer, Data Scientist</title>
         <link
