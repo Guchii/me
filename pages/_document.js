@@ -30,7 +30,11 @@ class MyDocument extends Document {
           />
         </Head>
         <body
-          style={{ fontFamily: "Londrina Solid, cursive", fontSize: "20px" }}
+          style={{
+            fontFamily: "Londrina Solid, cursive",
+            fontSize: "20px",
+            userSelect: "none",
+          }}
         >
           <Main />
           <NextScript />

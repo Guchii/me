@@ -36,10 +36,18 @@ export default function Home() {
             stuff.
           </Text>
           <Flex gap={3}>
-            <Button colorScheme={"teal"} size={"lg"}>
+            <Button
+              colorScheme={"teal"}
+              size={"lg"}
+              onClick={() => router.push("/projects")}
+            >
               Projects
             </Button>
-            <Button colorScheme={"teal"} size={"lg"}>
+            <Button
+              colorScheme={"teal"}
+              size={"lg"}
+              onClick={() => window.open("/Resume.pdf", "_self")}
+            >
               Resume
             </Button>
           </Flex>

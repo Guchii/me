@@ -62,7 +62,7 @@ const LinkItem = ({ text, href, isExternal }) => {
     <Link _focus={{ boxShadow: "none" }} href={href || "/"} isExternal>
       {text}{" "}
       <BiLinkExternal
-        style={{ display: "inline", transform: "translateY(2px)" }}
+        style={{ display: "inline", transform: "translateY(4px)" }}
       />
     </Link>
   );

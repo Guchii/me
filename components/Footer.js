@@ -41,10 +41,7 @@ const Footer = () => {
             onClick={() => rd("mailto:shvomsrivastava@gmail.com")}
           />
         </Flex>
-        <Link
-          href="https://github.com/guchii/personal-website-nextjs"
-          isExternal
-        >
+        <Link href="https://github.com/guchii/guchii.github.io" isExternal>
           Made with ❤️
         </Link>
       </Flex>
