@@ -26,7 +26,7 @@ const Contact = () => {
         width={1280 * 0.3}
         height={720 * 0.3}
       />
-      <Box boxShadow={"lg"} p={6} width={350} maxWidth={500}>
+      <Box boxShadow={"lg"} p={6}>
         <form
           style={{ display: "flex", flexDirection: "column", gap: 10 }}
           action="https://formsubmit.co/shvomsrivastava@gmail.com"

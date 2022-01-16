@@ -1,14 +1,14 @@
 import NextLink from "next/link";
 import {
   Flex,
-  Heading,
   Link,
-  Spacer,
   Button,
   IconButton,
   useColorMode,
+  Box,
 } from "@chakra-ui/react";
 import { BsFillMoonFill } from "react-icons/bs";
+import { BiLinkExternal } from "react-icons/bi";
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
@@ -19,18 +19,19 @@ const Header = () => {
         justifyContent={"flex-start"}
         alignItems={"center"}
         direction={{ sm: "column", lg: "row" }}
+        width={1400}
+        mx="auto"
       >
-        <Heading size={"lg"}>Shivom Srivastava</Heading>
-        <Flex gap={4}>
+        <Flex gap={4} width={"100%"}>
           <LinkItem text="Home" href={"/"} />
           <LinkItem text="Skills" href={"skills"} />
           <LinkItem text="Projects" href="/projects" />
+          <LinkItem text="Contact" href="/contact" />
           <LinkItem
             text="Blog"
             href={"https://guchiii.hashnode.dev/"}
             isExternal
           />
-          <LinkItem text="Contact" href="/contact" />
         </Flex>
         <Flex gap={3} marginLeft={{ sm: "none", lg: "auto" }}>
           <IconButton
@@ -59,7 +60,10 @@ const LinkItem = ({ text, href, isExternal }) => {
     );
   return (
     <Link _focus={{ boxShadow: "none" }} href={href || "/"} isExternal>
-      {text}
+      {text}{" "}
+      <BiLinkExternal
+        style={{ display: "inline", transform: "translateY(2px)" }}
+      />
     </Link>
   );
 };

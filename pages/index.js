@@ -1,40 +1,63 @@
 import Head from "next/head";
-import { Heading, Text, Tooltip, Flex, Image, Button } from "@chakra-ui/react";
+import {
+  Heading,
+  Text,
+  Tooltip,
+  Flex,
+  Image,
+  Button,
+  Grid,
+  Box,
+} from "@chakra-ui/react";
 import { useRouter } from "next/router";
 export default function Home() {
   const router = useRouter();
   return (
     <>
-      <Flex direction="column" gap={4} maxWidth={"700px"}>
-        <Heading as="h1">👋 Hello There!</Heading>
-        <Text fontSize="xl">
-          My name is Shivom Srivastava. I am a frontend developer, a learning
-          data scientist, and an anime enthusiast.
-        </Text>
-        <Flex gap={3} justifyContent={{ sm: "center", lg: "flex-start" }}>
-          <Button colorScheme={"teal"} onClick={() => router.push("/projects")}>
-            My Projects
-          </Button>
-          <Button colorScheme={"teal"} onClick={() => router.push("/skills")}>
-            My Skills
-          </Button>
+      <Flex
+        width={1400}
+        mx={"auto"}
+        gap={20}
+        minHeight={300}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Flex flexDirection={"column"} fontSize={20} height={"100%"}>
+          <Text textColor={"teal"}>Hello, My name is</Text>
+          <Heading
+            size={"4xl"}
+            sx={{ fontFamily: "Londrina Solid, cursive" }}
+            letterSpacing={3}
+          >
+            Shivom Srivastava
+          </Heading>
+          <Text marginBottom={15}>
+            I&apos;m a frontend developer and I love to develop small and usable
+            stuff.
+          </Text>
+          <Flex gap={3}>
+            <Button colorScheme={"teal"} size={"lg"}>
+              Projects
+            </Button>
+            <Button colorScheme={"teal"} size={"lg"}>
+              Resume
+            </Button>
+          </Flex>
         </Flex>
-      </Flex>
-      <Tooltip label="Yours Truely" hasArrow>
         <Image
-          cursor={"pointer"}
-          borderRadius="full"
-          boxSize="300px"
           src="https://github.com/guchii.png"
           alt="Shivom Srivastava"
-          boxShadow={"md"}
-          sx={{
-            filter: "grayscale(50%)",
-          }}
+          rounded={"full"}
+          height={"300px"}
+          border="solid"
+          borderColor={"teal"}
+          borderWidth={4}
+          cursor={"pointer"}
+          p={3}
         />
-      </Tooltip>
+      </Flex>
       <Head>
-        <title>Shivom Srivastava | Web Developer, Data Scientist</title>
+        <title>Shivom Srivastava</title>
         <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>"

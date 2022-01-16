@@ -12,6 +12,8 @@ const Footer = () => {
         justifyContent={"space-between"}
         alignItems={"center"}
         wrap={"wrap"}
+        width={1400}
+        mx="auto"
       >
         <Flex justifyContent={"space-between"} alignItems={"center"} gap={3}>
           <IconButton
