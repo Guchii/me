@@ -8,6 +8,7 @@ import { SiMyanimelist } from "react-icons/si";
 import { FaSteam } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { Flex, IconButton, Link } from "@chakra-ui/react";
+
 const Footer = () => {
   const router = useRouter();
   const rd = (url) => window.open(url, "_blank");
