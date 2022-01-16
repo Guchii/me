@@ -18,14 +18,20 @@ const Projects = () => {
     {
       name: "Plug Talk",
       desc: "Open source community chat app",
-      source: "#",
-      url: "#",
+      source: "https://github.com/teamPlugTalk/PlugTalk",
+      url: "https://plugtalk.netlify.app/",
     },
     {
       name: "Dump Code Here",
       desc: "Polished paste bin, Runs on serverless functions",
-      source: "#",
-      url: "#",
+      source: "https://github.com/guchii/dumpcodehere",
+      url: "https://dumpcodehere.vercel.app/",
+    },
+    {
+      name: "The Free Times",
+      desc: "Free to read e news paper",
+      source: "https://github.com/guchii/the-free-times",
+      url: "https://guchii.github.io/the-free-times",
     },
   ];
   const rd = (url) => window.open(url, "_blank");
