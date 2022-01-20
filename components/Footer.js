@@ -61,7 +61,7 @@ const Footer = () => {
           />
         </Flex>
         <Link href="https://github.com/guchii/guchii.github.io" isExternal>
-          Made with ❤️
+          Designed & Built by Shivom Srivastava
         </Link>
       </Flex>
     </>

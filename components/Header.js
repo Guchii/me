@@ -1,12 +1,5 @@
 import NextLink from "next/link";
-import {
-  Flex,
-  Link,
-  Button,
-  IconButton,
-  useColorMode,
-  Box,
-} from "@chakra-ui/react";
+import { Flex, Link, Button, IconButton, useColorMode } from "@chakra-ui/react";
 import { BsFillMoonFill } from "react-icons/bs";
 import { BiLinkExternal } from "react-icons/bi";
 const Header = () => {
@@ -29,7 +22,7 @@ const Header = () => {
           <LinkItem text="Contact" href="/contact" />
           <LinkItem
             text="Blog"
-            href={"https://guchiii.hashnode.dev/"}
+            href="https://guchiii.hashnode.dev/"
             isExternal
           />
         </Flex>
