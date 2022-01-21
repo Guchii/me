@@ -10,20 +10,23 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-export default function Home() {
+export default function Home({ niceProps }) {
   const router = useRouter();
   return (
     <>
       <Flex
-        maxWidth={1400}
-        mx={"auto"}
         gap={20}
         minHeight={300}
         justifyContent={"center"}
         alignItems={"center"}
-        p={6}
+        {...niceProps}
       >
-        <Flex flexDirection={"column"} fontSize={20} height={"100%"}>
+        <Flex
+          flexDirection={"column"}
+          fontSize={20}
+          height={"100%"}
+          textAlign={{ sm: "center", md: "start" }}
+        >
           <Text textColor={"teal"}>Hello, My name is</Text>
           <Heading
             size={"4xl"}
@@ -36,7 +39,7 @@ export default function Home() {
             I&apos;m a frontend developer and I love to develop small and usable
             stuff.
           </Text>
-          <Flex gap={3}>
+          <Flex justifyContent={{ sm: "center", md: "flex-start" }} gap={3}>
             <Button
               colorScheme={"teal"}
               size={"lg"}
@@ -58,6 +61,7 @@ export default function Home() {
           alt="Shivom Srivastava"
           rounded={"full"}
           height={"300px"}
+          width={"300px"}
           border="solid"
           borderColor={"teal"}
           borderWidth={4}

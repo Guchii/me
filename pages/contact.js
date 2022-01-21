@@ -4,12 +4,14 @@ import {
   Flex,
   FormControl,
   FormLabel,
+  Heading,
   Image,
   Input,
+  Text,
   Textarea,
 } from "@chakra-ui/react";
 import Head from "next/head";
-const Contact = () => {
+const Contact = ({ niceProps }) => {
   return (
     <>
       <Head>
@@ -20,23 +22,32 @@ const Contact = () => {
         ></link>
       </Head>
       <Flex
-        width={1400}
-        mx={"auto"}
+        {...niceProps}
         justifyContent={"center"}
         alignItems={"center"}
+        direction={{ sm: "column", md: "row" }}
         gap={20}
       >
-        <Image
-          src={"/naruto1.jpg"}
-          alt="naruto"
-          width={1280 * 0.3}
-          height={720 * 0.3}
-        />
-        <Box boxShadow={"lg"} p={6} width={400}>
+        <Box>
+          <Text fontSize={"4xl"} display={"block"} textAlign={"center"}>
+            The Contact Page
+          </Text>
+          <Image
+            src={"/naruto1.jpg"}
+            alt="naruto"
+            display={{ sm: "none", lg: "block" }}
+            marginTop={6}
+            width={1280 * 0.3}
+            height={720 * 0.3}
+            rounded={"xl"}
+            shadow={"2xl"}
+          />
+        </Box>
+        <Box boxShadow={"lg"} p={6} maxWidth={400} width={"100%"}>
           <form
             action="https://formsubmit.co/shvomsrivastava@gmail.com"
             method="POST"
-            style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+            style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
           >
             <FormControl id="name" isRequired>
               <FormLabel>Name</FormLabel>

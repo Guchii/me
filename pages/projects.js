@@ -1,4 +1,5 @@
 import {
+  Flex,
   Grid,
   HStack,
   IconButton,
@@ -42,21 +43,22 @@ const Projects = () => {
         ></link>
       </Head>
       <Grid
-        width={1400}
+        maxWidth={1400}
         mx={"auto"}
         gap={30}
-        height={"100%"}
         p={6}
-        templateColumns={"repeat(3, 1fr)"}
+        templateColumns={"repeat( auto-fill, minmax(400px, 1fr))"}
         maxHeight={"80vh"}
         overflowY={"auto"}
+        overflowX={"hidden"}
+        width={"100%"}
       >
         {projects.map((project) => (
           <Stack
             key={v4()}
-            width={"100%"}
-            height={150}
+            height={"auto"}
             rounded={"xl"}
+            width={{ sm: "90%", md: "100%" }}
             boxShadow={"xl"}
             p={4}
             spacing={2}

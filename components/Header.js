@@ -10,9 +10,9 @@ const Header = () => {
       <Flex
         p={6}
         gap={6}
-        justifyContent={[null, "center", "flex-start"]}
+        justifyContent={{ sm: "center", md: "space-between" }}
         alignItems={"center"}
-        direction={[null, "column", "row"]}
+        direction={{ sm: "column-reverse", md: "row" }}
         maxWidth={1400}
         width={"100%"}
         mx="auto"
@@ -21,9 +21,10 @@ const Header = () => {
           gap={4}
           width={"100%"}
           justifyContent={{ sm: "center", md: "flex-start" }}
+          wrap={{ sm: "wrap" }}
         >
-          <LinkItem text="Home" href={"/"} />
-          <LinkItem text="Skills" href={"skills"} />
+          <LinkItem text="Home" href="/" />
+          <LinkItem text="About" href="/about" />
           <LinkItem text="Projects" href="/projects" />
           <LinkItem text="Contact" href="/contact" />
           <LinkItem
@@ -32,15 +33,21 @@ const Header = () => {
             isExternal
           />
         </Flex>
-        <Flex gap={3} marginLeft={{ sm: "none", lg: "auto" }}>
+        <Flex
+          gap={3}
+          marginLeft={{ sm: "none", md: "auto" }}
+          width={{ sm: "100%", md: "auto" }}
+        >
           <IconButton
             aria-label="Search database"
             icon={<BsFillMoonFill />}
             onClick={toggleColorMode}
+            width={{ sm: "100%", md: "auto" }}
           />
           <Button
             onClick={() => window.open("/Resume.pdf", "_self")}
             colorScheme="teal"
+            display={{ sm: "none", md: "block" }}
           >
             Resume
           </Button>
