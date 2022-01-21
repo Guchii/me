@@ -17,12 +17,18 @@ const Footer = () => {
       <Flex
         p={6}
         justifyContent={"space-between"}
-        alignItems={"center"}
-        wrap={"wrap"}
-        width={1400}
+        direction={{ sm: "column", md: "row" }}
+        maxWidth={1400}
+        width={"100%"}
         mx="auto"
+        gap={6}
       >
-        <Flex justifyContent={"space-between"} alignItems={"center"} gap={3}>
+        <Flex
+          wrap={{ sm: "wrap", md: "nowrap" }}
+          justifyContent={"center"}
+          alignItems={"center"}
+          gap={3}
+        >
           <IconButton
             aria-label="linkedin"
             size={"lg"}
@@ -60,7 +66,11 @@ const Footer = () => {
             onClick={() => rd("https://myanimelist.net/animelist/guchiii")}
           />
         </Flex>
-        <Link href="https://github.com/guchii/guchii.github.io" isExternal>
+        <Link
+          href="https://github.com/guchii/guchii.github.io"
+          isExternal
+          textAlign={"center"}
+        >
           Designed & Built by Shivom Srivastava
         </Link>
       </Flex>

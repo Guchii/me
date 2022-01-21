@@ -15,12 +15,13 @@ export default function Home() {
   return (
     <>
       <Flex
-        width={1400}
+        maxWidth={1400}
         mx={"auto"}
         gap={20}
         minHeight={300}
         justifyContent={"center"}
         alignItems={"center"}
+        p={6}
       >
         <Flex flexDirection={"column"} fontSize={20} height={"100%"}>
           <Text textColor={"teal"}>Hello, My name is</Text>
@@ -61,6 +62,7 @@ export default function Home() {
           borderColor={"teal"}
           borderWidth={4}
           cursor={"pointer"}
+          display={{ sm: "none", md: "block" }}
           p={3}
         />
       </Flex>

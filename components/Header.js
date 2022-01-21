@@ -2,6 +2,7 @@ import NextLink from "next/link";
 import { Flex, Link, Button, IconButton, useColorMode } from "@chakra-ui/react";
 import { BsFillMoonFill } from "react-icons/bs";
 import { BiLinkExternal } from "react-icons/bi";
+
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
@@ -9,13 +10,18 @@ const Header = () => {
       <Flex
         p={6}
         gap={6}
-        justifyContent={"flex-start"}
+        justifyContent={[null, "center", "flex-start"]}
         alignItems={"center"}
-        direction={{ sm: "column", lg: "row" }}
-        width={1400}
+        direction={[null, "column", "row"]}
+        maxWidth={1400}
+        width={"100%"}
         mx="auto"
       >
-        <Flex gap={4} width={"100%"}>
+        <Flex
+          gap={4}
+          width={"100%"}
+          justifyContent={{ sm: "center", md: "flex-start" }}
+        >
           <LinkItem text="Home" href={"/"} />
           <LinkItem text="Skills" href={"skills"} />
           <LinkItem text="Projects" href="/projects" />
