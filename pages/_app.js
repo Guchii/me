@@ -33,6 +33,7 @@ const MyApp = ({ Component, pageProps }) => {
           direction={"column"}
           minHeight="100vh"
           justifyContent="space-between"
+          overflow="hidden"
         >
           <Header />
           <Component niceProps={niceProps} {...pageProps} />

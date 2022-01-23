@@ -10,6 +10,9 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
+const MotionImage = motion(Image);
+const MotionFlex = motion(Flex);
 export default function Home({ niceProps }) {
   const router = useRouter();
   return (
@@ -21,11 +24,14 @@ export default function Home({ niceProps }) {
         alignItems={"center"}
         {...niceProps}
       >
-        <Flex
+        <MotionFlex
           flexDirection={"column"}
           fontSize={20}
           height={"100%"}
           textAlign={{ sm: "center", md: "start" }}
+          initial={{ x: -300, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.6 }}
         >
           <Text textColor={"teal"}>Hello, My name is</Text>
           <Heading
@@ -55,8 +61,8 @@ export default function Home({ niceProps }) {
               Resume
             </Button>
           </Flex>
-        </Flex>
-        <Image
+        </MotionFlex>
+        <MotionImage
           src="https://github.com/guchii.png"
           alt="Shivom Srivastava"
           rounded={"full"}
@@ -68,6 +74,9 @@ export default function Home({ niceProps }) {
           cursor={"pointer"}
           display={{ sm: "none", md: "block" }}
           p={3}
+          initial={{ scale: 0 }}
+          animate={{ rotate: 360, scale: 1 }}
+          draggable={false}
         />
       </Flex>
       <Head>

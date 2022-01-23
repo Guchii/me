@@ -41,6 +41,7 @@ const Contact = ({ niceProps }) => {
             height={720 * 0.3}
             rounded={"xl"}
             shadow={"2xl"}
+            draggable="false"
           />
         </Box>
         <Box boxShadow={"lg"} p={6} maxWidth={400} width={"100%"}>

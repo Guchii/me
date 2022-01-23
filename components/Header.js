@@ -2,12 +2,15 @@ import NextLink from "next/link";
 import { Flex, Link, Button, IconButton, useColorMode } from "@chakra-ui/react";
 import { BsFillMoonFill } from "react-icons/bs";
 import { BiLinkExternal } from "react-icons/bi";
+import { motion } from "framer-motion";
+
+const MotionFlex = motion(Flex);
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
-      <Flex
+      <MotionFlex
         p={6}
         gap={6}
         justifyContent={{ sm: "center", md: "space-between" }}
@@ -16,6 +19,9 @@ const Header = () => {
         maxWidth={1400}
         width={"100%"}
         mx="auto"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ delay: 0.2 }}
       >
         <Flex
           gap={4}
@@ -52,7 +58,7 @@ const Header = () => {
             Resume
           </Button>
         </Flex>
-      </Flex>
+      </MotionFlex>
     </>
   );
 };
