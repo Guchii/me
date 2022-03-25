@@ -1,20 +1,21 @@
-import Head from "next/head";
-import {
-  Heading,
-  Text,
-  Tooltip,
-  Flex,
-  Image,
-  Button,
-  Grid,
-  Box,
-} from "@chakra-ui/react";
-import { useRouter } from "next/router";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import Head from "next/head";
+import NextLink from "next/link";
+import { useState } from "react";
+
 const MotionImage = motion(Image);
 const MotionFlex = motion(Flex);
+
+const beforeLoadImageVariant = { initial: {}, final: {} };
+const afterLoadImageVariant = {
+  initial: { scale: 0 },
+  final: { rotate: 360, scale: 1 },
+};
+
 export default function Home({ niceProps }) {
-  const router = useRouter();
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   return (
     <>
       <Flex
@@ -46,45 +47,51 @@ export default function Home({ niceProps }) {
             stuff.
           </Text>
           <Flex justifyContent={{ sm: "center", md: "flex-start" }} gap={3}>
-            <Button
-              colorScheme={"teal"}
-              size={"lg"}
-              onClick={() => router.push("/projects")}
-            >
-              Projects
-            </Button>
-            <Button
-              colorScheme={"teal"}
-              size={"lg"}
-              onClick={() => window.open("/Resume.pdf", "_self")}
-            >
-              Resume
-            </Button>
+            <NextLink href="/projects">
+              <a>
+                <Box colorScheme={"teal"} size={"lg"}>
+                  Projects
+                </Box>
+              </a>
+            </NextLink>
+            <NextLink href="/Resume.pdf">
+              <a>
+                <Box colorScheme={"teal"} size={"lg"}>
+                  Resume
+                </Box>
+              </a>
+            </NextLink>
           </Flex>
         </MotionFlex>
-        <MotionImage
-          src="https://github.com/guchii.png"
-          alt="Shivom Srivastava"
-          rounded={"full"}
-          height={"300px"}
-          width={"300px"}
-          border="solid"
-          borderColor={"teal"}
-          borderWidth={4}
-          cursor={"pointer"}
-          display={{ sm: "none", md: "block" }}
-          p={3}
-          initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
-          draggable={false}
-        />
+        <Box height="300px" width="300px">
+          <MotionImage
+            src="https://github.com/guchii.png"
+            alt="Shivom Srivastava"
+            rounded={"full"}
+            height={"300px"}
+            width={"300px"}
+            border="solid"
+            borderColor={"teal"}
+            borderWidth={4}
+            cursor={"pointer"}
+            display={{ sm: "none", md: !isImageLoaded ? "none" : "block" }}
+            p={3}
+            variants={
+              isImageLoaded ? afterLoadImageVariant : beforeLoadImageVariant
+            }
+            initial="initial"
+            animate="final"
+            draggable={false}
+            onLoad={(_e) => setIsImageLoaded(true)}
+          />
+        </Box>
       </Flex>
       <Head>
         <title>Shivom Srivastava</title>
         <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>"
-        ></link>
+        />
       </Head>
     </>
   );
