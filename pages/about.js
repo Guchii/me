@@ -29,17 +29,17 @@ const Skills = ({ niceProps }) => {
       id: 3,
       name: "JS",
       full: "Javascript",
-      Info: "",
+      info: "",
     },
     {
       id: 4,
       name: "React",
-      Info: "",
+      info: "React is Good",
     },
     {
       id: 5,
       name: "Next JS",
-      Info: "",
+      info: "",
     },
     {
       id: 6,
@@ -88,12 +88,12 @@ const Skills = ({ niceProps }) => {
             margin={0}
             display="grid"
             gap={4}
-            gridTemplateColumns="1fr 1fr"
+            gridTemplateColumns="1fr 1fr 1fr"
             marginLeft={24}
             marginRight={"auto"}
             w="20%"
           >
-            {Skills.map((skill, i) => {
+            {/* {Skills.map((skill, i) => {
               return (
                 <ListItem
                   key={skill}
@@ -105,24 +105,53 @@ const Skills = ({ niceProps }) => {
                   </Button>
                 </ListItem>
               );
+            })} */}
+            {Skills2.map((skill, i) => {
+              return (
+                <ListItem
+                  key={skill.id}
+                  onMouseEnter={() => setSelected(i + 1)}
+                  onMouseLeave={() => setSelected(0)}
+                >
+                  <Button
+                    colorScheme={"purple"}
+                    borderRadius="full"
+                    w={"full"}
+                    textTransform="uppercase"
+                  >
+                    {skill.name}
+                  </Button>
+                </ListItem>
+              );
             })}
           </UnorderedList>
-          <Box w="60%">
-            {/* <Text fontSize={"3xl"}>React</Text> */}
-            <Text fontSize={"3xl"}>
-              {selected ? Skills[selected - 1] : "Hover over a Skill Please"}
-            </Text>
-            <Text>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Reprehenderit est dolore facere? Sequi quod delectus dicta facere
-              quia. Quas, tempore.
-            </Text>
-          </Box>
+          <SkillShowcase selected={selected} Skills2={Skills2} />
         </Flex>
       </Box>
       <Head>
         <title>About Me</title>
       </Head>
+    </Box>
+  );
+};
+
+const SkillShowcase = ({ selected, Skills2 }) => {
+  if (selected) {
+    const { name, info } = Skills2[selected - 1];
+    return (
+      <Box w="60%">
+        <Text fontSize={"3xl"}>{name} </Text>
+        <Text>{info}</Text>
+      </Box>
+    );
+  }
+  return (
+    <Box w="60%">
+      <Text fontSize={"3xl"}>Hover over a Skill</Text>
+      <Text>
+        Lorem ipsum sit, amet consectetur adipisicing elit. Reprehenderit est
+        dolore facere? Sequi quod delectus dicta facere quia. Quas, tempore.
+      </Text>
     </Box>
   );
 };
