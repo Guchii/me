@@ -13,7 +13,12 @@ const MyApp = ({ Component, pageProps }) => {
   };
   return (
     <ChakraProvider theme={MyTheme} resetCSS>
-      {isBigEnough ? (
+      {!isBigEnough ? (
+        <>
+          Your device&apos;s resolution may be very small. Please switch to
+          desktop mode if you are on a mobile browser.
+        </>
+      ) : (
         <Flex
           direction={"column"}
           minHeight="100vh"
@@ -24,11 +29,6 @@ const MyApp = ({ Component, pageProps }) => {
           <Component niceProps={niceProps} {...pageProps} />
           <Footer />
         </Flex>
-      ) : (
-        <>
-          Your device&apos;s resolution may be very small. Please switch to
-          desktop mode if you are on a mobile browser.
-        </>
       )}
     </ChakraProvider>
   );
