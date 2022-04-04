@@ -52,7 +52,7 @@ const Header = () => {
           />
           <Button
             onClick={() => window.open("/Resume.pdf", "_self")}
-            colorScheme="teal"
+            colorScheme="purple"
             display={{ sm: "none", md: "block" }}
           >
             Resume

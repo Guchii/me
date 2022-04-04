@@ -1,22 +1,7 @@
-import {
-  ChakraProvider,
-  extendTheme,
-  Flex,
-  useMediaQuery,
-} from "@chakra-ui/react";
-import { createBreakpoints } from "@chakra-ui/theme-tools";
+import { ChakraProvider, Flex, useMediaQuery } from "@chakra-ui/react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-
-const breakpoints = createBreakpoints({
-  sm: "320px",
-  md: "768px",
-  lg: "960px",
-  xl: "1200px",
-  "2xl": "1536px",
-});
-
-const theme = extendTheme({ breakpoints });
+import MyTheme from "../styles/theme";
 
 const MyApp = ({ Component, pageProps }) => {
   const [isBigEnough] = useMediaQuery("(min-width: 320px)");
@@ -27,7 +12,7 @@ const MyApp = ({ Component, pageProps }) => {
     mx: "auto",
   };
   return (
-    <ChakraProvider theme={theme} resetCSS>
+    <ChakraProvider theme={MyTheme} resetCSS>
       {isBigEnough ? (
         <Flex
           direction={"column"}

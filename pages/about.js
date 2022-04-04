@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import {
   Box,
+  Button,
   Flex,
   Image,
   ListItem,
@@ -11,6 +12,46 @@ import Head from "next/head";
 import { useState } from "react";
 const Skills = ({ niceProps }) => {
   const Skills = ["HTML", "CSS", "JS", "REACT", "FIGMA", "LINUX"];
+  const Skills2 = [
+    {
+      id: 1,
+      name: "HTML",
+      full: "HyperText Markup Language",
+      info: "",
+    },
+    {
+      id: 2,
+      name: "CSS",
+      full: "Cascading StyleSheets",
+      info: "",
+    },
+    {
+      id: 3,
+      name: "JS",
+      full: "Javascript",
+      Info: "",
+    },
+    {
+      id: 4,
+      name: "React",
+      Info: "",
+    },
+    {
+      id: 5,
+      name: "Next JS",
+      Info: "",
+    },
+    {
+      id: 6,
+      name: "Figma",
+      info: "",
+    },
+    {
+      id: 7,
+      name: "LINUX",
+      info: "",
+    },
+  ];
   const [selected, setSelected] = useState(0);
   return (
     <Box {...niceProps}>
@@ -55,19 +96,13 @@ const Skills = ({ niceProps }) => {
             {Skills.map((skill, i) => {
               return (
                 <ListItem
-                  bg="beige"
-                  borderRadius={"full"}
-                  textAlign="center"
                   key={skill}
-                  padding="4px 16px"
-                  _hover={{
-                    filter: "brightness(0.8)",
-                  }}
-                  cursor="pointer"
                   onMouseEnter={() => setSelected(i + 1)}
                   onMouseLeave={() => setSelected(0)}
                 >
-                  {skill}
+                  <Button colorScheme={"purple"} borderRadius="full" w={"full"}>
+                    {skill}
+                  </Button>
                 </ListItem>
               );
             })}
