@@ -8,8 +8,10 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 import Head from "next/head";
+import { useState } from "react";
 const Skills = ({ niceProps }) => {
   const Skills = ["HTML", "CSS", "JS", "REACT", "FIGMA", "LINUX"];
+  const [selected, setSelected] = useState(0);
   return (
     <Box {...niceProps}>
       <Text fontSize="4xl" marginBottom={8}>
@@ -38,34 +40,50 @@ const Skills = ({ niceProps }) => {
       </Flex>
       <Box>
         <Text fontSize="3xl">Skills</Text>
-        <UnorderedList
-          styleType={"none"}
-          padding={0}
-          margin={0}
-          display="grid"
-          gap={4}
-          gridTemplateColumns="1fr 1fr"
-          width={"10%"}
-          marginLeft={24}
-        >
-          {Skills.map((skill) => {
-            return (
-              <ListItem
-                bg="beige"
-                borderRadius={"full"}
-                textAlign="center"
-                key={skill}
-                padding="4px 16px"
-                _hover={{
-                  filter: "brightness(0.8)",
-                }}
-                cursor="pointer"
-              >
-                {skill}
-              </ListItem>
-            );
-          })}
-        </UnorderedList>
+        <Flex>
+          <UnorderedList
+            styleType={"none"}
+            padding={0}
+            margin={0}
+            display="grid"
+            gap={4}
+            gridTemplateColumns="1fr 1fr"
+            marginLeft={24}
+            marginRight={"auto"}
+            w="20%"
+          >
+            {Skills.map((skill, i) => {
+              return (
+                <ListItem
+                  bg="beige"
+                  borderRadius={"full"}
+                  textAlign="center"
+                  key={skill}
+                  padding="4px 16px"
+                  _hover={{
+                    filter: "brightness(0.8)",
+                  }}
+                  cursor="pointer"
+                  onMouseEnter={() => setSelected(i + 1)}
+                  onMouseLeave={() => setSelected(0)}
+                >
+                  {skill}
+                </ListItem>
+              );
+            })}
+          </UnorderedList>
+          <Box w="60%">
+            {/* <Text fontSize={"3xl"}>React</Text> */}
+            <Text fontSize={"3xl"}>
+              {selected ? Skills[selected - 1] : "Hover over a Skill Please"}
+            </Text>
+            <Text>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Reprehenderit est dolore facere? Sequi quod delectus dicta facere
+              quia. Quas, tempore.
+            </Text>
+          </Box>
+        </Flex>
       </Box>
       <Head>
         <title>About Me</title>
