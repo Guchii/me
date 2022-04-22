@@ -4,6 +4,7 @@ import {
   Button,
   Flex,
   Heading,
+  HStack,
   Image,
   ListItem,
   Text,
@@ -55,9 +56,21 @@ const Skills = ({ niceProps }) => {
   const [selected, setSelected] = useState(0);
   return (
     <Box {...niceProps}>
-      <Flex gap={20} justifyContent="flex-start">
-        <Text w="50%">
-          <Heading fontSize="4xl">Who am I</Heading>
+      <HStack>
+        <Text w="50%" flex={1} fontSize="2xl">
+          <Heading
+            fontSize="6xl"
+            _after={{
+              content: '" "',
+              bg: "purple.300",
+              height: "4px",
+              width: "100%",
+              display: "block",
+            }}
+            marginBottom={4}
+          >
+            About Me
+          </Heading>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
           provident culpa sed quas repellat aperiam illo laboriosam temporibus
           ducimus aut incidunt. Porro numquam reiciendis ut itaque dolores illo
@@ -67,13 +80,17 @@ const Skills = ({ niceProps }) => {
         </Text>
         <Image
           borderRadius={15}
-          src="http://placekitten.com/300/300"
+          height="500px"
+          width={"500px"}
+          src="http://placekitten.com/500/500"
           alt="guchii"
         />
-      </Flex>
+      </HStack>
       <Box>
-        <Heading fontSize="3xl">Skills</Heading>
-        <Flex>
+        <Heading fontSize="5xl" marginBottom={8}>
+          Skills
+        </Heading>
+        <HStack>
           <UnorderedList
             styleType={"none"}
             padding={0}
@@ -81,7 +98,7 @@ const Skills = ({ niceProps }) => {
             display="grid"
             gap={4}
             gridTemplateColumns="1fr 1fr 1fr"
-            marginLeft={24}
+            // marginLeft={24}
             marginRight={"auto"}
             w="20%"
           >
@@ -105,7 +122,7 @@ const Skills = ({ niceProps }) => {
             })}
           </UnorderedList>
           <SkillShowcase selected={selected} Skills2={Skills} />
-        </Flex>
+        </HStack>
       </Box>
       <Head>
         <title>About Me</title>
