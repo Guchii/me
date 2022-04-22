@@ -29,13 +29,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body
-          style={{
-            fontFamily: "Londrina Solid, cursive",
-            fontSize: "20px",
-            userSelect: "none",
-          }}
-        >
+        <body>
           <Main />
           <NextScript />
         </body>

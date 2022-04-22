@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text, Button } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import NextLink from "next/link";
@@ -35,11 +35,7 @@ export default function Home({ niceProps }) {
           transition={{ delay: 0.6 }}
         >
           <Text textColor={"teal"}>Hello, My name is</Text>
-          <Heading
-            size={"4xl"}
-            sx={{ fontFamily: "Londrina Solid, cursive" }}
-            letterSpacing={3}
-          >
+          <Heading size={"4xl"} letterSpacing={3}>
             Shivom Srivastava
           </Heading>
           <Text marginBottom={15}>
@@ -47,19 +43,15 @@ export default function Home({ niceProps }) {
             stuff.
           </Text>
           <Flex justifyContent={{ sm: "center", md: "flex-start" }} gap={3}>
-            <NextLink href="/projects">
-              <a>
-                <Box colorScheme={"teal"} size={"lg"}>
-                  Projects
-                </Box>
-              </a>
+            <NextLink href="/projects" passHref>
+              <Button as="a" colorScheme={"teal"} size={"lg"}>
+                Projects
+              </Button>
             </NextLink>
-            <NextLink href="/Resume.pdf">
-              <a>
-                <Box colorScheme={"teal"} size={"lg"}>
-                  Resume
-                </Box>
-              </a>
+            <NextLink href="/Resume.pdf" passHref>
+              <Button as="a" colorScheme={"teal"} size={"lg"}>
+                Resume
+              </Button>
             </NextLink>
           </Flex>
         </MotionFlex>

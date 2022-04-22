@@ -16,6 +16,10 @@ const theme = extendTheme({
     Button,
     ListItem,
   },
+  fonts: {
+    body: "plus jakarta sans, sans-serif",
+    heading: "plus jakarta sans, sans-serif",
+  },
 });
 
 export default theme;
