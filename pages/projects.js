@@ -1,6 +1,7 @@
 import {
   Flex,
   Grid,
+  Heading,
   HStack,
   IconButton,
   Spacer,
@@ -9,9 +10,8 @@ import {
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { FaGithub } from "react-icons/fa";
-import { v4 } from "uuid";
 import { BiLinkExternal } from "react-icons/bi";
-const Projects = () => {
+const Projects = ({ niceProps }) => {
   const projects = [
     {
       name: "Plug Talk",
@@ -31,6 +31,24 @@ const Projects = () => {
       source: "https://github.com/guchii/the-free-times",
       url: "https://guchii.github.io/the-free-times",
     },
+    {
+      name: "Nara Link Locker",
+      desc: "Minimalistic link locker web application",
+      source: "https://github.com/guchii/nara",
+      url: "https://narall.surge.sh",
+    },
+    {
+      name: "The Pocket Gita",
+      desc: "Beautiful Gita Reader Web Application",
+      source: "https://github.com/guchii/the-pocket-gita",
+      url: "https://guchii.github.io/the-pocket-gita",
+    },
+    {
+      name: "The Pocket Gita API",
+      desc: "Free to use Gita API",
+      source: "https://github.com/guchii/the-pocket-gita-api",
+      url: "https://the-pocket-gita.herokuapp.com/",
+    },
   ];
   const rd = (url) => window.open(url, "_blank");
   return (
@@ -43,29 +61,24 @@ const Projects = () => {
         ></link>
       </Head>
       <Grid
-        maxWidth={1400}
-        mx={"auto"}
         gap={30}
         p={6}
-        templateColumns={"repeat( auto-fill, minmax(400px, 1fr))"}
-        maxHeight={"80vh"}
+        templateColumns={"repeat(auto-fit, minmax(300px, 1fr))"}
         overflowY={"auto"}
         overflowX={"hidden"}
-        width={"100%"}
+        {...niceProps}
       >
-        {projects.map((project) => (
+        {projects.map((project, i) => (
           <Stack
-            key={v4()}
+            key={i}
             height={"auto"}
             rounded={"xl"}
-            width={{ sm: "90%", md: "100%" }}
+            width={{ sm: "100%", md: "100%" }}
             boxShadow={"xl"}
-            p={4}
-            spacing={2}
+            paddingBlock={8}
+            paddingInline={4}
           >
-            <Text fontSize={30} lineHeight={5}>
-              {project.name}
-            </Text>
+            <Heading fontSize={30}>{project.name}</Heading>
             <Text>{project.desc}</Text>
             <Spacer />
             <HStack>
