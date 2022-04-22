@@ -29,9 +29,9 @@ const Contact = ({ niceProps }) => {
         gap={20}
       >
         <Box>
-          <Text fontSize={"4xl"} display={"block"} textAlign={"center"}>
+          <Heading fontSize={"4xl"} textAlign={"center"}>
             The Contact Page
-          </Text>
+          </Heading>
           <Image
             src={"/naruto1.jpg"}
             alt="naruto"
@@ -82,7 +82,7 @@ const Contact = ({ niceProps }) => {
               name="_subject"
               value="New submission!"
             ></input>
-            <Button colorScheme={"teal"} type={"submit"}>
+            <Button colorScheme={"purple"} type={"submit"}>
               Submit Response
             </Button>
           </form>
