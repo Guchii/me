@@ -22,6 +22,7 @@ const Header = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ delay: 0.2 }}
+        fontSize="lg"
       >
         <Flex
           gap={4}
@@ -67,16 +68,15 @@ const LinkItem = ({ text, href, isExternal }) => {
   if (!isExternal)
     return (
       <NextLink href={href || "/"} passHref>
-        <Link _focus={{ boxShadow: "none" }}>{text}</Link>
+        <Button bg="none" as={"a"}>
+          {text}
+        </Button>
       </NextLink>
     );
   return (
-    <Link _focus={{ boxShadow: "none" }} href={href || "/"} isExternal>
-      {text}{" "}
-      <BiLinkExternal
-        style={{ display: "inline", transform: "translateY(4px)" }}
-      />
-    </Link>
+    <Button as={"a"} bg="none" href={href || "/"} isExternal>
+      {text}
+    </Button>
   );
 };
 
