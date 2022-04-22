@@ -1,4 +1,5 @@
 import {
+  Box,
   Flex,
   Grid,
   Heading,
@@ -24,6 +25,12 @@ const Projects = ({ niceProps }) => {
       desc: "Polished paste bin, Runs on serverless functions",
       source: "https://github.com/guchii/dumpcodehere",
       url: "https://dumpcodehere.vercel.app/",
+    },
+    {
+      name: "guchii.github.io",
+      desc: "This very website",
+      source: "https://github.com/guchii/guchii.github.io",
+      url: "/",
     },
     {
       name: "The Free Times",
@@ -52,7 +59,7 @@ const Projects = ({ niceProps }) => {
   ];
   const rd = (url) => window.open(url, "_blank");
   return (
-    <>
+    <Box {...niceProps}>
       <Head>
         <title>Projects | Shivom Srivastava</title>
         <link
@@ -60,13 +67,14 @@ const Projects = ({ niceProps }) => {
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍜</text></svg>"
         ></link>
       </Head>
+      <Heading gridColumn={"span 4"} fontSize={"4xl"}>
+        My Projects
+      </Heading>
       <Grid
         gap={30}
-        p={6}
-        templateColumns={"repeat(auto-fit, minmax(300px, 1fr))"}
+        templateColumns={"repeat(auto-fit, minmax(350px, 1fr))"}
         overflowY={"auto"}
         overflowX={"hidden"}
-        {...niceProps}
       >
         {projects.map((project, i) => (
           <Stack
@@ -100,7 +108,7 @@ const Projects = ({ niceProps }) => {
           </Stack>
         ))}
       </Grid>
-    </>
+    </Box>
   );
 };
 
