@@ -56,7 +56,7 @@ const Skills = ({ niceProps }) => {
   const [selected, setSelected] = useState(0);
   return (
     <Box {...niceProps}>
-      <HStack>
+      <HStack spacing={8}>
         <Text w="50%" flex={1} fontSize="2xl">
           <Heading
             fontSize="6xl"
