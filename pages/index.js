@@ -35,7 +35,7 @@ export default function Home({ niceProps }) {
           transition={{ delay: 0.6 }}
         >
           <Text textColor={"teal"}>Hello, My name is</Text>
-          <Heading size={"4xl"} letterSpacing={3}>
+          <Heading size={"4xl"} letterSpacing={2}>
             Shivom Srivastava
           </Heading>
           <Text marginBottom={15}>

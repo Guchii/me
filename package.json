@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^1.7.3",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/montserrat": "^4.5.7",
     "@fontsource/plus-jakarta-sans": "^4.5.0",
     "@fontsource/staatliches": "^4.5.0",
     "@popperjs/core": "^2.10.2",

@@ -18,7 +18,7 @@ const theme = extendTheme({
   },
   fonts: {
     body: "plus jakarta sans, sans-serif",
-    heading: "plus jakarta sans, sans-serif",
+    heading: "montserrat, sans-serif",
   },
 });
 

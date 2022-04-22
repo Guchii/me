@@ -2,7 +2,8 @@ import { ChakraProvider, Flex, useMediaQuery } from "@chakra-ui/react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MyTheme from "../styles/theme";
-import "@fontsource/plus-jakarta-sans";
+import "@fontsource/plus-jakarta-sans/400.css";
+import "@fontsource/montserrat/700.css";
 
 const MyApp = ({ Component, pageProps }) => {
   const [isBigEnough] = useMediaQuery("(min-width: 320px)");
