@@ -1,4 +1,12 @@
-import { Box, Flex, Heading, Image, Text, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  Button,
+  HStack,
+} from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import NextLink from "next/link";
@@ -18,12 +26,12 @@ export default function Home({ niceProps }) {
 
   return (
     <>
-      <Flex
-        gap={20}
+      <HStack
         minHeight={300}
         justifyContent={"center"}
         alignItems={"center"}
         {...niceProps}
+        gap={8}
       >
         <MotionFlex
           flexDirection={"column"}
@@ -34,48 +42,55 @@ export default function Home({ niceProps }) {
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          <Text textColor={"teal"}>Hello, My name is</Text>
-          <Heading size={"4xl"}>Shivom Srivastava</Heading>
-          <Text marginBottom={15}>
-            I&apos;m a frontend developer and I love to develop small and usable
-            stuff.
+          <Text textColor={"purple.600"} fontSize="2xl">
+            Hello, My name is
+          </Text>
+          <Heading fontSize={"7xl"}>Shivom Srivastava</Heading>
+          <Text marginBottom={8} fontSize="2xl">
+            I&apos;m a{" "}
+            <Text
+              display={"inline"}
+              bgGradient="linear(to-l, #7928CA, #FF0080)"
+              bgClip="text"
+              fontWeight="bold"
+            >
+              full stack developer
+            </Text>{" "}
+            and I love to develop small and usable stuff.
           </Text>
           <Flex justifyContent={{ sm: "center", md: "flex-start" }} gap={3}>
             <NextLink href="/projects" passHref>
-              <Button as="a" colorScheme={"teal"} size={"lg"}>
+              <Button as="a" colorScheme={"purple"} size={"lg"}>
                 Projects
               </Button>
             </NextLink>
             <NextLink href="/Resume.pdf" passHref>
-              <Button as="a" colorScheme={"teal"} size={"lg"}>
+              <Button as="a" colorScheme={"purple"} size={"lg"}>
                 Resume
               </Button>
             </NextLink>
           </Flex>
         </MotionFlex>
-        <Box height="300px" width="300px">
-          <MotionImage
-            src="https://github.com/guchii.png"
-            alt="Shivom Srivastava"
-            rounded={"full"}
-            height={"300px"}
-            width={"300px"}
-            border="solid"
-            borderColor={"teal"}
-            borderWidth={4}
-            cursor={"pointer"}
-            display={{ sm: "none", md: !isImageLoaded ? "none" : "block" }}
-            p={3}
-            variants={
-              isImageLoaded ? afterLoadImageVariant : beforeLoadImageVariant
-            }
-            initial="initial"
-            animate="final"
-            draggable={false}
-            onLoad={(_e) => setIsImageLoaded(true)}
-          />
-        </Box>
-      </Flex>
+        <MotionImage
+          src="https://placekitten.com/500"
+          alt="Shivom Srivastava"
+          rounded={"full"}
+          // border="solid"
+          // borderColor={"teal"}
+          // borderWidth={4}
+          display={{ sm: "none", md: !isImageLoaded ? "none" : "block" }}
+          boxShadow="2xl"
+          variants={
+            isImageLoaded ? afterLoadImageVariant : beforeLoadImageVariant
+          }
+          initial="initial"
+          animate="final"
+          draggable={false}
+          onLoad={(_e) => setIsImageLoaded(true)}
+          height="400px"
+          width="400px"
+        />
+      </HStack>
       <Head>
         <title>Shivom Srivastava</title>
         <link
