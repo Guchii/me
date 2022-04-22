@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Flex,
+  Heading,
   Image,
   ListItem,
   Text,
@@ -11,8 +12,7 @@ import {
 import Head from "next/head";
 import { useState } from "react";
 const Skills = ({ niceProps }) => {
-  const Skills = ["HTML", "CSS", "JS", "REACT", "FIGMA", "LINUX"];
-  const Skills2 = [
+  const Skills = [
     {
       id: 1,
       name: "HTML",
@@ -55,17 +55,9 @@ const Skills = ({ niceProps }) => {
   const [selected, setSelected] = useState(0);
   return (
     <Box {...niceProps}>
-      <Text fontSize="4xl" marginBottom={8}>
-        The About Page
-      </Text>
-      <Flex
-        // alignItems={"center"}
-        gap={20}
-        justifyContent="flex-start"
-        marginLeft={24}
-      >
+      <Flex gap={20} justifyContent="flex-start">
         <Text w="50%">
-          <Text fontSize="4xl">Who am I</Text>
+          <Heading fontSize="4xl">Who am I</Heading>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
           provident culpa sed quas repellat aperiam illo laboriosam temporibus
           ducimus aut incidunt. Porro numquam reiciendis ut itaque dolores illo
@@ -80,7 +72,7 @@ const Skills = ({ niceProps }) => {
         />
       </Flex>
       <Box>
-        <Text fontSize="3xl">Skills</Text>
+        <Heading fontSize="3xl">Skills</Heading>
         <Flex>
           <UnorderedList
             styleType={"none"}
@@ -93,20 +85,7 @@ const Skills = ({ niceProps }) => {
             marginRight={"auto"}
             w="20%"
           >
-            {/* {Skills.map((skill, i) => {
-              return (
-                <ListItem
-                  key={skill}
-                  onMouseEnter={() => setSelected(i + 1)}
-                  onMouseLeave={() => setSelected(0)}
-                >
-                  <Button colorScheme={"purple"} borderRadius="full" w={"full"}>
-                    {skill}
-                  </Button>
-                </ListItem>
-              );
-            })} */}
-            {Skills2.map((skill, i) => {
+            {Skills.map((skill, i) => {
               return (
                 <ListItem
                   key={skill.id}
@@ -125,7 +104,7 @@ const Skills = ({ niceProps }) => {
               );
             })}
           </UnorderedList>
-          <SkillShowcase selected={selected} Skills2={Skills2} />
+          <SkillShowcase selected={selected} Skills2={Skills} />
         </Flex>
       </Box>
       <Head>
