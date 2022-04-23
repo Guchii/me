@@ -30,8 +30,8 @@ export default function Home({ niceProps }) {
         minHeight={300}
         justifyContent={"center"}
         alignItems={"center"}
-        {...niceProps}
         gap={8}
+        {...niceProps}
       >
         <MotionFlex
           flexDirection={"column"}

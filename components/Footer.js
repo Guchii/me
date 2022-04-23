@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <>
       <MotionFlex
-        p={6}
+        paddingBlock={6}
         justifyContent={"space-between"}
         direction={{ sm: "column", md: "row" }}
         maxWidth={1400}

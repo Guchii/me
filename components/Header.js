@@ -1,5 +1,5 @@
 import NextLink from "next/link";
-import { Flex, Link, Button, IconButton, useColorMode } from "@chakra-ui/react";
+import { Flex, Button, IconButton, useColorMode } from "@chakra-ui/react";
 import { BsFillMoonFill } from "react-icons/bs";
 import { BiLinkExternal } from "react-icons/bi";
 import { motion } from "framer-motion";
@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <>
       <MotionFlex
-        p={6}
+        paddingBlock={6}
         gap={6}
         justifyContent={{ sm: "center", md: "space-between" }}
         alignItems={"center"}
