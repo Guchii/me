@@ -11,19 +11,14 @@ const MyApp = ({ Component, pageProps }) => {
     width: "100%",
     maxWidth: 1400,
     mx: "auto",
+    height: "calc(100vh - 88px - 96px)",
+    overflowY: "auto",
   };
   return (
     <ChakraProvider theme={MyTheme} resetCSS>
-      <Flex
-        direction={"column"}
-        minHeight="100vh"
-        justifyContent="space-between"
-        overflow="hidden"
-      >
-        <Header />
-        <Component niceProps={niceProps} {...pageProps} />
-        <Footer />
-      </Flex>
+      <Header />
+      <Component niceProps={niceProps} {...pageProps} />
+      <Footer />
     </ChakraProvider>
   );
 };

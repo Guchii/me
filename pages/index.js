@@ -41,6 +41,7 @@ export default function Home({ niceProps }) {
           initial={{ x: -300, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.6 }}
+          justify="center"
         >
           <Text textColor={"purple.600"} fontSize="2xl">
             Hello, My name is
