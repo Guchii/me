@@ -1,7 +1,6 @@
 import NextLink from "next/link";
 import { Flex, Button, IconButton, useColorMode } from "@chakra-ui/react";
 import { BsFillMoonFill } from "react-icons/bs";
-import { BiLinkExternal } from "react-icons/bi";
 import { motion } from "framer-motion";
 
 const MotionFlex = motion(Flex);
