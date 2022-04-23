@@ -76,9 +76,6 @@ export default function Home({ niceProps }) {
           src="https://placekitten.com/500"
           alt="Shivom Srivastava"
           rounded={"full"}
-          // border="solid"
-          // borderColor={"teal"}
-          // borderWidth={4}
           display={{ sm: "none", md: !isImageLoaded ? "none" : "block" }}
           boxShadow="2xl"
           variants={
