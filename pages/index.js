@@ -57,8 +57,8 @@ export default function Home({ niceProps }) {
           display={{ sm: "none", md: "block" }}
           boxShadow="2xl"
           draggable={false}
-          height="400px"
-          width="400px"
+          height="320px"
+          width="320px"
         />
       </HStack>
       <Head>
