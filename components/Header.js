@@ -16,6 +16,7 @@ const Header = () => {
         width={"100%"}
         mx="auto"
         fontSize="lg"
+        paddingInline={{ sm: 6, "2xl": 0 }}
       >
         <Flex
           gap={4}

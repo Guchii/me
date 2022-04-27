@@ -22,6 +22,7 @@ const Footer = () => {
         width={"100%"}
         mx="auto"
         gap={6}
+        paddingInline={{ sm: 6, "2xl": 0 }}
       >
         <Flex
           wrap={{ sm: "wrap", md: "nowrap" }}

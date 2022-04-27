@@ -13,7 +13,7 @@ const MyApp = ({ Component, pageProps, router }) => {
     maxWidth: 1400,
     mx: "auto",
     height: "100%",
-    p: { sm: 6, "2xl": 0 },
+    paddingInline: { sm: 6, "2xl": 0 },
   };
   return (
     <ChakraProvider theme={MyTheme} resetCSS>
