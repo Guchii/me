@@ -8,16 +8,13 @@ import { SiMyanimelist } from "react-icons/si";
 import { FaSteam } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { Flex, IconButton, Link } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-
-const MotionFlex = motion(Flex);
 
 const Footer = () => {
   const router = useRouter();
   const rd = (url) => window.open(url, "_blank");
   return (
     <>
-      <MotionFlex
+      <Flex
         paddingBlock={6}
         justifyContent={"space-between"}
         direction={{ sm: "column", md: "row" }}
@@ -25,9 +22,6 @@ const Footer = () => {
         width={"100%"}
         mx="auto"
         gap={6}
-        initial={{ y: 100 }}
-        animate={{ y: 0 }}
-        transition={{ delay: 0.4 }}
       >
         <Flex
           wrap={{ sm: "wrap", md: "nowrap" }}
@@ -79,7 +73,7 @@ const Footer = () => {
         >
           Designed & Built by Shivom Srivastava
         </Link>
-      </MotionFlex>
+      </Flex>
     </>
   );
 };

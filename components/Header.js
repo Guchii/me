@@ -3,13 +3,11 @@ import { Flex, Button, IconButton, useColorMode } from "@chakra-ui/react";
 import { BsFillMoonFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 
-const MotionFlex = motion(Flex);
-
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
-      <MotionFlex
+      <Flex
         paddingBlock={6}
         gap={6}
         justifyContent={{ sm: "center", md: "space-between" }}
@@ -18,9 +16,6 @@ const Header = () => {
         maxWidth={1400}
         width={"100%"}
         mx="auto"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ delay: 0.2 }}
         fontSize="lg"
       >
         <Flex
@@ -58,7 +53,7 @@ const Header = () => {
             Resume
           </Button>
         </Flex>
-      </MotionFlex>
+      </Flex>
     </>
   );
 };

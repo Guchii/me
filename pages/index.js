@@ -1,29 +1,10 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Image,
-  Text,
-  Button,
-  HStack,
-} from "@chakra-ui/react";
+import { Button, Flex, Heading, HStack, Image, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import NextLink from "next/link";
 import { useState } from "react";
 
-const MotionImage = motion(Image);
-const MotionFlex = motion(Flex);
-
-const beforeLoadImageVariant = { initial: {}, final: {} };
-const afterLoadImageVariant = {
-  initial: { scale: 0 },
-  final: { rotate: 360, scale: 1 },
-};
-
 export default function Home({ niceProps }) {
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
-
   return (
     <>
       <HStack
@@ -33,14 +14,11 @@ export default function Home({ niceProps }) {
         gap={8}
         {...niceProps}
       >
-        <MotionFlex
+        <Flex
           flexDirection={"column"}
           fontSize={20}
           height={"100%"}
           textAlign={{ sm: "center", md: "start" }}
-          initial={{ x: -300, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.6 }}
           justify="center"
         >
           <Text textColor={"purple.600"} fontSize="2xl">
@@ -71,20 +49,14 @@ export default function Home({ niceProps }) {
               </Button>
             </NextLink>
           </Flex>
-        </MotionFlex>
-        <MotionImage
+        </Flex>
+        <Image
           src="https://placekitten.com/500"
           alt="Shivom Srivastava"
           rounded={"full"}
-          display={{ sm: "none", md: !isImageLoaded ? "none" : "block" }}
+          display={{ sm: "none", md: "block" }}
           boxShadow="2xl"
-          variants={
-            isImageLoaded ? afterLoadImageVariant : beforeLoadImageVariant
-          }
-          initial="initial"
-          animate="final"
           draggable={false}
-          onLoad={(_e) => setIsImageLoaded(true)}
           height="400px"
           width="400px"
         />
