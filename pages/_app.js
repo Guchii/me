@@ -13,6 +13,7 @@ const MyApp = ({ Component, pageProps, router }) => {
     maxWidth: 1400,
     mx: "auto",
     height: "100%",
+    p: { sm: 6, "2xl": 0 },
   };
   return (
     <ChakraProvider theme={MyTheme} resetCSS>
@@ -27,7 +28,6 @@ const MyApp = ({ Component, pageProps, router }) => {
             backgroundColor: "rgba(0, 0, 0, 0.05)",
           },
           "&::-webkit-scrollbar-thumb": {
-            // backgroundColor: "rgba(0, 0, 0, 0.05)",
             borderRadius: "15px",
             backgroundColor: "purple.300",
           },
@@ -39,10 +39,12 @@ const MyApp = ({ Component, pageProps, router }) => {
           empty: {
             opacity: 0,
             scale: 0.8,
+            x: Math.floor(Math.random * 10) > 4 ? 200 : -200,
           },
           final: {
             opacity: 1,
             scale: 1,
+            x: 0,
           },
         }}
       >
