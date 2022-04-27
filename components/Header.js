@@ -1,7 +1,6 @@
 import NextLink from "next/link";
 import { Flex, Button, IconButton, useColorMode } from "@chakra-ui/react";
 import { BsFillMoonFill } from "react-icons/bs";
-import { motion } from "framer-motion";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
