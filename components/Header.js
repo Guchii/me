@@ -1,10 +1,4 @@
-import {
-  Button,
-  Flex,
-  IconButton,
-  useColorMode,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Button, Flex, IconButton, useColorMode } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { BsFillMoonFill } from "react-icons/bs";
 
