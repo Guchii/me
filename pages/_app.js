@@ -1,10 +1,12 @@
 import { Box, ChakraProvider } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MyTheme from "../styles/theme";
-import "@fontsource/plus-jakarta-sans/400.css";
+
 import "@fontsource/montserrat/700.css";
-import { motion } from "framer-motion";
+import "@fontsource/plus-jakarta-sans/400.css";
 
 const ChakraBox = motion(Box);
 
@@ -19,8 +21,7 @@ const MyApp = ({ Component, pageProps, router }) => {
     <ChakraProvider theme={MyTheme} resetCSS>
       <Header />
       <ChakraBox
-        overflowY={"auto"}
-        height={"calc(100vh - 88px - 96px)"}
+        minHeight={"calc(100vh - 88px - 96px)"}
         sx={{
           "&::-webkit-scrollbar": {
             width: "8px",
