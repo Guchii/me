@@ -1,5 +1,11 @@
+import {
+  Button,
+  Flex,
+  IconButton,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
-import { Flex, Button, IconButton, useColorMode } from "@chakra-ui/react";
 import { BsFillMoonFill } from "react-icons/bs";
 
 const Header = () => {
@@ -17,6 +23,9 @@ const Header = () => {
         mx="auto"
         fontSize="lg"
         paddingInline={{ sm: 6, "2xl": 0 }}
+        position={"sticky"}
+        top={0}
+        left={0}
       >
         <Flex
           gap={4}
