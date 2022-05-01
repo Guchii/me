@@ -8,7 +8,7 @@ export default function Home({ niceProps }) {
   return (
     <>
       <HStack
-        minHeight={300}
+        minHeight={"inherit"}
         justifyContent={"center"}
         alignItems={"center"}
         gap={8}

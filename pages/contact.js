@@ -11,6 +11,7 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import Head from "next/head";
+
 const Contact = ({ niceProps }) => {
   return (
     <>
@@ -27,6 +28,7 @@ const Contact = ({ niceProps }) => {
         alignItems={"center"}
         direction={{ sm: "column", md: "row" }}
         gap={20}
+        minHeight="inherit"
       >
         <Box>
           <Heading fontSize={"4xl"} textAlign={"center"}>
