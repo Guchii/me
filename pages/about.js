@@ -86,7 +86,7 @@ const Skills = ({ niceProps }) => {
           alt="guchii"
         />
       </HStack>
-      <Box>
+      {/* <Box>
         <Heading fontSize="5xl" marginBottom={8}>
           Skills
         </Heading>
@@ -123,7 +123,7 @@ const Skills = ({ niceProps }) => {
           </UnorderedList>
           <SkillShowcase selected={selected} Skills2={Skills} />
         </HStack>
-      </Box>
+      </Box> */}
       <Head>
         <title>About Me</title>
       </Head>
