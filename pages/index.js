@@ -20,12 +20,18 @@ export default function Home({ niceProps }) {
           height={"100%"}
           textAlign={{ sm: "center", md: "start" }}
           justify="center"
+          gap={2}
         >
           <Text textColor={"purple.600"} fontSize="2xl">
             Hello, My name is
           </Text>
-          <Heading fontSize={"7xl"}>Shivom Srivastava</Heading>
-          <Text marginBottom={8} fontSize="2xl">
+          <Heading
+            fontSize={{ sm: "5xl", md: "7xl" }}
+            lineHeight={{ sm: "90%", md: "110%" }}
+          >
+            Shivom Srivastava
+          </Heading>
+          <Text marginBottom={8} fontSize={["xl", "2xl"]}>
             I&apos;m a{" "}
             <Text
               display={"inline"}
@@ -33,7 +39,7 @@ export default function Home({ niceProps }) {
               bgClip="text"
               fontWeight="bold"
             >
-              full stack developer
+              frontend developer
             </Text>{" "}
             and I love to develop small and usable stuff.
           </Text>
