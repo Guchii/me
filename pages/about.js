@@ -9,6 +9,7 @@ import {
   ListItem,
   Text,
   UnorderedList,
+  Stack,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { useState } from "react";
@@ -56,10 +57,14 @@ const Skills = ({ niceProps }) => {
   const [selected, setSelected] = useState(0);
   return (
     <Box {...niceProps}>
-      <HStack spacing={8}>
-        <Text w="50%" flex={1} fontSize="2xl">
+      <Stack
+        direction={{ sm: "column", md: "row" }}
+        spacing={8}
+        alignItems="center"
+      >
+        <Text fontSize="xl">
           <Heading
-            fontSize="6xl"
+            fontSize="5xl"
             _after={{
               content: '" "',
               bg: "purple.300",
@@ -80,12 +85,12 @@ const Skills = ({ niceProps }) => {
         </Text>
         <Image
           borderRadius={15}
-          height="500px"
-          width={"500px"}
           src="http://placekitten.com/500/500"
           alt="guchii"
+          width={350}
+          height={350}
         />
-      </HStack>
+      </Stack>
       {/* <Box>
         <Heading fontSize="5xl" marginBottom={8}>
           Skills
