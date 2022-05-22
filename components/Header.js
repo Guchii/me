@@ -17,9 +17,6 @@ const Header = () => {
         mx="auto"
         fontSize="lg"
         paddingInline={{ sm: 6, "2xl": 0 }}
-        position={"sticky"}
-        top={0}
-        left={0}
       >
         <Flex
           gap={4}
