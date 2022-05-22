@@ -1,6 +1,18 @@
-import { Button, Flex, IconButton, useColorMode } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  useColorMode,
+  Text,
+  MenuDivider,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
 import { BsFillMoonFill } from "react-icons/bs";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -11,20 +23,19 @@ const Header = () => {
         gap={6}
         justifyContent={{ sm: "center", md: "space-between" }}
         alignItems={"center"}
-        direction={{ sm: "column-reverse", md: "row" }}
+        direction={"row"}
         maxWidth={1400}
         width={"100%"}
         mx="auto"
         fontSize="lg"
         paddingInline={{ sm: 6, "2xl": 0 }}
       >
-        <Flex
-          gap={4}
-          width={"100%"}
-          justifyContent={{ sm: "center", md: "flex-start" }}
-          wrap={{ sm: "wrap" }}
-        >
-          <LinkItem text="Home" href="/" />
+        <NextLink href="/" passHref>
+          <Text as="a" fontWeight={"black"} fontSize="xl">
+            SS
+          </Text>
+        </NextLink>
+        <Flex gap={4} width={"100%"} display={{ sm: "none", md: "flex" }}>
           <LinkItem text="About" href="/about" />
           <LinkItem text="Projects" href="/projects" />
           <LinkItem text="Contact" href="/contact" />
@@ -34,16 +45,11 @@ const Header = () => {
             isExternal
           />
         </Flex>
-        <Flex
-          gap={3}
-          marginLeft={{ sm: "none", md: "auto" }}
-          width={{ sm: "100%", md: "auto" }}
-        >
+        <Flex gap={3} w="100%" justify={"end"}>
           <IconButton
             aria-label="Search database"
             icon={<BsFillMoonFill />}
             onClick={toggleColorMode}
-            width={{ sm: "100%", md: "auto" }}
           />
           <Button
             onClick={() => window.open("/Resume.pdf", "_self")}
@@ -52,6 +58,23 @@ const Header = () => {
           >
             Resume
           </Button>
+          <Menu isLazy>
+            <MenuButton
+              display={{ sm: "flex", md: "none" }}
+              as={IconButton}
+              icon={<GiHamburgerMenu />}
+            ></MenuButton>
+            <MenuDivider />
+            <MenuList>
+              {["About", "Projects", "Contact"].map((nice) => (
+                <NextLink href={`/${nice.toLowerCase()}`} passHref>
+                  <MenuItem closeOnSelect as="a">
+                    {nice}
+                  </MenuItem>
+                </NextLink>
+              ))}
+            </MenuList>
+          </Menu>
         </Flex>
       </Flex>
     </>
