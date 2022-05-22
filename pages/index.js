@@ -22,7 +22,7 @@ export default function Home({ niceProps }) {
           justify="center"
           gap={2}
         >
-          <Text textColor={"purple.600"} fontSize="2xl">
+          <Text textColor={"purple.600"} fontSize={{ sm: "md", md: "2xl" }}>
             Hello, My name is
           </Text>
           <Heading
@@ -31,7 +31,7 @@ export default function Home({ niceProps }) {
           >
             Shivom Srivastava
           </Heading>
-          <Text marginBottom={8} fontSize={["xl", "2xl"]}>
+          <Text marginBottom={8} fontSize={{ sm: "md", md: "2xl" }}>
             I&apos;m a{" "}
             <Text
               display={"inline"}
@@ -45,19 +45,19 @@ export default function Home({ niceProps }) {
           </Text>
           <Flex justifyContent={{ sm: "center", md: "flex-start" }} gap={3}>
             <NextLink href="/projects" passHref>
-              <Button as="a" colorScheme={"purple"} size={"lg"}>
+              <Button as="a" colorScheme={"purple"}>
                 Projects
               </Button>
             </NextLink>
             <NextLink href="/Resume.pdf" passHref>
-              <Button as="a" colorScheme={"purple"} size={"lg"}>
+              <Button as="a" colorScheme={"purple"}>
                 Resume
               </Button>
             </NextLink>
           </Flex>
         </Flex>
         <Image
-          src="https://placekitten.com/500"
+          src="https://github.com/guchii.png"
           alt="Shivom Srivastava"
           rounded={"full"}
           display={{ sm: "none", md: "block" }}
