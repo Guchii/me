@@ -1,4 +1,5 @@
 import {
+  AspectRatio,
   Box,
   Button,
   Flex,
@@ -27,24 +28,25 @@ const Contact = ({ niceProps }) => {
         justifyContent={"center"}
         alignItems={"center"}
         direction={{ sm: "column", md: "row" }}
-        gap={20}
+        gap={12}
         minHeight="inherit"
       >
         <Box>
           <Heading fontSize={"4xl"} textAlign={"center"}>
             The Contact Page
           </Heading>
-          <Image
-            src={"/naruto1.jpg"}
-            alt="naruto"
-            display={{ sm: "none", lg: "block" }}
-            marginTop={6}
-            width={1280 * 0.3}
-            height={720 * 0.3}
-            rounded={"xl"}
-            shadow={"2xl"}
-            draggable="false"
-          />
+          <AspectRatio ratio={16 / 9}>
+            <Image
+              src={"/naruto1.jpg"}
+              alt="naruto"
+              marginTop={4}
+              height={"full"}
+              width="full"
+              rounded={"xl"}
+              shadow={"2xl"}
+              draggable="false"
+            />
+          </AspectRatio>
         </Box>
         <Box boxShadow={"lg"} p={6} maxWidth={400} width={"100%"}>
           <form
