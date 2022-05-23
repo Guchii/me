@@ -4,11 +4,11 @@ import {
   IconButton,
   Menu,
   MenuButton,
+  MenuDivider,
   MenuItem,
   MenuList,
-  useColorMode,
   Text,
-  MenuDivider,
+  useColorMode,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { BsFillMoonFill } from "react-icons/bs";
@@ -67,7 +67,7 @@ const Header = () => {
             <MenuDivider />
             <MenuList>
               {["About", "Projects", "Contact"].map((nice) => (
-                <NextLink href={`/${nice.toLowerCase()}`} passHref>
+                <NextLink key={nice} href={`/${nice.toLowerCase()}`} passHref>
                   <MenuItem closeOnSelect as="a">
                     {nice}
                   </MenuItem>
