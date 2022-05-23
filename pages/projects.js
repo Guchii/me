@@ -10,8 +10,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Head from "next/head";
-import { FaGithub } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
+import { FaGithub } from "react-icons/fa";
+
 const Projects = ({ niceProps }) => {
   const projects = [
     {
@@ -67,14 +68,14 @@ const Projects = ({ niceProps }) => {
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍜</text></svg>"
         ></link>
       </Head>
-      <Heading gridColumn={"span 4"} fontSize={"4xl"}>
+      <Heading fontSize={"4xl"} textAlign={{ sm: "center", md: "left" }}>
         My Projects
       </Heading>
       <Grid
         gap={30}
-        templateColumns={"repeat(auto-fit, minmax(350px, 1fr))"}
+        templateColumns={"repeat(auto-fit, minmax(320px, 1fr))"}
         overflowY={"auto"}
-        overflowX={"hidden"}
+        mb={6}
       >
         {projects.map((project, i) => (
           <Stack
@@ -85,11 +86,12 @@ const Projects = ({ niceProps }) => {
             boxShadow={"xl"}
             paddingBlock={8}
             paddingInline={4}
+            textAlign={{ sm: "center", md: "left" }}
           >
             <Heading fontSize={30}>{project.name}</Heading>
             <Text>{project.desc}</Text>
             <Spacer />
-            <HStack>
+            <HStack justify={{ sm: "center", md: "flex-start" }}>
               <IconButton
                 aria-label="source"
                 size={"lg"}
