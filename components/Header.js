@@ -45,11 +45,13 @@ const Header = () => {
             isExternal
           />
         </Flex>
-        <Flex gap={3} w="100%" justify={"end"}>
+        <Flex w="100%">
           <IconButton
             aria-label="Search database"
             icon={<BsFillMoonFill />}
             onClick={toggleColorMode}
+            marginLeft="auto"
+            marginRight={3}
           />
           <Button
             onClick={() => window.open("/Resume.pdf", "_self")}
