@@ -1,17 +1,50 @@
+import { Flex, IconButton, Link, useBreakpointValue } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import {
   AiFillGithub,
   AiFillInstagram,
-  AiFillMail,
   AiFillLinkedin,
+  AiFillMail,
 } from "react-icons/ai";
-import { SiMyanimelist } from "react-icons/si";
 import { FaSteam } from "react-icons/fa";
-import { useRouter } from "next/router";
-import { Flex, IconButton, Link } from "@chakra-ui/react";
+import { SiMyanimelist } from "react-icons/si";
 
 const Footer = () => {
   const router = useRouter();
   const rd = (url) => window.open(url, "_blank");
+  const buttonSize = useBreakpointValue({ base: "md", md: "lg" });
+  const Links = [
+    {
+      name: "linkedin",
+      icon: AiFillLinkedin,
+      link: "https://in.linkedin.com/in/shivom-srivastava",
+    },
+    {
+      name: "github",
+      icon: AiFillGithub,
+      link: "https://github.com/guchii",
+    },
+    {
+      name: "mail",
+      icon: AiFillMail,
+      link: "mailto:shvomsrivastava@gmail.com",
+    },
+    {
+      name: "instagram",
+      icon: AiFillInstagram,
+      link: "https://instagram.com/guchi.xd",
+    },
+    {
+      name: "steam",
+      icon: FaSteam,
+      link: "https://steamcommunity.com/id/guchixd/",
+    },
+    {
+      name: "myanimelist",
+      icon: SiMyanimelist,
+      link: "https://myanimelist.net/animelist/guchiii",
+    },
+  ];
   return (
     <>
       <Flex
@@ -30,42 +63,17 @@ const Footer = () => {
           alignItems={"center"}
           gap={3}
         >
-          <IconButton
-            aria-label="linkedin"
-            size={"lg"}
-            icon={<AiFillLinkedin />}
-            onClick={() => rd("https://in.linkedin.com/in/shivom-srivastava")}
-          />
-          <IconButton
-            aria-label="github"
-            size={"lg"}
-            icon={<AiFillGithub />}
-            onClick={() => rd("https://github.com/guchii")}
-          />
-          <IconButton
-            aria-label="mail"
-            size={"lg"}
-            icon={<AiFillMail />}
-            onClick={() => rd("mailto:shvomsrivastava@gmail.com")}
-          />
-          <IconButton
-            aria-label="instagram"
-            size={"lg"}
-            icon={<AiFillInstagram />}
-            onClick={() => rd("https://instagram.com/guchi_xd/")}
-          />
-          <IconButton
-            aria-label="steam"
-            size={"lg"}
-            icon={<FaSteam />}
-            onClick={() => rd("https://steamcommunity.com/id/guchixd/")}
-          />
-          <IconButton
-            aria-label="myanimelist"
-            size={"lg"}
-            icon={<SiMyanimelist />}
-            onClick={() => rd("https://myanimelist.net/animelist/guchiii")}
-          />
+          {Links.map((ll) => {
+            return (
+              <IconButton
+                key={ll.name}
+                aria-label={ll.name}
+                size={buttonSize}
+                icon={<ll.icon />}
+                onClick={() => rd(ll.link)}
+              />
+            );
+          })}
         </Flex>
         <Link
           href="https://github.com/guchii/guchii.github.io"
