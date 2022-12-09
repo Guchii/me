@@ -5,8 +5,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MyTheme from "../styles/theme";
 
-import "@fontsource/montserrat/700.css";
-import "@fontsource/plus-jakarta-sans/400.css";
+import "@fontsource/space-mono"
 import { AppProps } from "next/app";
 import Layout from "../components/Layout";
 

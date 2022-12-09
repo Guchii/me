@@ -25,10 +25,15 @@ const Projects = () => {
               height={"full"}
               width={"full"}
               rounded={"xl"}
-              boxShadow={"xl"}
+              boxShadow={"lg"}
               px={8}
               py={6}
               textAlign={{ sm: "center", md: "left" }}
+              _hover={{
+                boxShadow: "xl",
+                transform: "translateY(-2px)",
+              }}
+              transitionDuration="0.3s"
             >
               <Heading fontSize={24}>{project.name}</Heading>
               <Text>

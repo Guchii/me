@@ -1,6 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
-import { ButtonStyles as Button } from "./components/buttonStyles";
-import { ListItemStyles as ListItem } from "./components/listItemStyles";
+import { ButtonStyles as Button, LinkStyles as Link } from "./components";
 
 const breakpoints = {
   sm: "320px",
@@ -14,12 +13,22 @@ const theme = extendTheme({
   breakpoints,
   components: {
     Button,
-    ListItem,
+    Link
   },
   fonts: {
-    body: "plus jakarta sans, sans-serif",
-    heading: "montserrat, sans-serif",
+    // body: "plus jakarta sans, sans-serif",
+    body: "Space Mono, monospace",
+    heading: "Space Mono, monospace",
   },
+  styles: {
+    global: {
+      a: {
+        _hover:{
+          textDecoration: "none",
+        }
+      }
+    }
+  }
 });
 
 export default theme;

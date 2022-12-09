@@ -12,7 +12,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { BsFillMoonFill } from "react-icons/bs";
+import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {FiExternalLink} from "react-icons/fi";
 
@@ -50,7 +50,7 @@ const Header = () => {
         <Flex w="100%">
           <IconButton
             aria-label="Search database"
-            icon={<BsFillMoonFill />}
+            icon={colorMode === "light" ? <BsFillMoonFill /> :  <BsFillSunFill />}
             onClick={toggleColorMode}
             marginLeft="auto"
             marginRight={3}
@@ -60,6 +60,7 @@ const Header = () => {
             isExternal
             href="https://cv.shivom.tech"
             colorScheme="purple"
+            display={{ sm: "none", md: "flex" }}
           >
             Resume
           </Button>

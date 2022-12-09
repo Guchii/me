@@ -47,13 +47,6 @@ const Skills = () => {
           been programming for over three years and I love it! I’m a fast
           learner and I always try to find ways to improve my skills.
         </Text>
-        <Image
-          borderRadius={15}
-          src="https://github.com/guchii.png"
-          alt="guchii"
-          width={350}
-          height={350}
-        />
       </Stack>
       <Head>
         <title>About Me</title>

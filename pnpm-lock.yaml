@@ -6,6 +6,7 @@ specifiers:
   '@emotion/styled': ^11
   '@fontsource/montserrat': ^4.5.7
   '@fontsource/plus-jakarta-sans': ^4.5.0
+  '@fontsource/space-mono': ^4.5.10
   '@fontsource/staatliches': ^4.5.0
   '@popperjs/core': ^2.10.2
   '@types/node': 18.11.12
@@ -31,6 +32,7 @@ dependencies:
   '@emotion/styled': 11.10.5_qvatmowesywn4ye42qoh247szu
   '@fontsource/montserrat': 4.5.13
   '@fontsource/plus-jakarta-sans': 4.5.10
+  '@fontsource/space-mono': 4.5.10
   '@fontsource/staatliches': 4.5.9
   '@popperjs/core': 2.11.6
   bootstrap: 5.2.3_@popperjs+core@2.11.6
@@ -1079,6 +1081,10 @@ packages:
 
   /@fontsource/plus-jakarta-sans/4.5.10:
     resolution: {integrity: sha512-WWyrjO6qyL7j3itLJUEE/rHRyDfypsoIvpvI6Ld0vyEae49P613cm5UBRe5zMnPjNC7dXBQ8/fjbszbifkL6BA==}
+    dev: false
+
+  /@fontsource/space-mono/4.5.10:
+    resolution: {integrity: sha512-OTrWNdcPp01bZjEbSu52vMu9PaReUFylHAMI4lctKVbYUnm+e7a4eG6YcnRvDrJEMYHBDtEWLAsqGVldV5r1EQ==}
     dev: false
 
   /@fontsource/staatliches/4.5.9:
