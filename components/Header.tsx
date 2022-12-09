@@ -2,6 +2,7 @@ import {
   Button,
   Flex,
   IconButton,
+  Link,
   Menu,
   MenuButton,
   MenuDivider,
@@ -83,19 +84,25 @@ const Header = () => {
   );
 };
 
-const LinkItem = ({ text, href, isExternal }) => {
+const LinkItem = ({
+  text,
+  href,
+  isExternal,
+}: {
+  text: string;
+  href: string;
+  isExternal?: boolean;
+}) => {
   if (!isExternal)
     return (
-      <NextLink href={href || "/"} passHref>
-        <Button bg="none" as={"a"}>
-          {text}
-        </Button>
+      <NextLink href={href || "/"}>
+        <Button bg="none">{text}</Button>
       </NextLink>
     );
   return (
-    <Button as={"a"} bg="none" href={href || "/"} isExternal>
-      {text}
-    </Button>
+    <Link href={href || "/"} isExternal>
+      <Button bg="none">{text}</Button>
+    </Link>
   );
 };
 
