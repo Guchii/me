@@ -22,6 +22,8 @@ const Skills = () => {
       <Stack
         direction={{ sm: "column", md: "row" }}
         spacing={8}
+        h="70vh"
+        justifyContent="center"
         alignItems="center"
       >
         <Text fontSize="xl">
@@ -33,10 +35,11 @@ const Skills = () => {
               height: "4px",
               width: "100%",
               display: "block",
+              marginTop: "1rem",
             }}
             marginBottom={4}
           >
-            About Me
+            About
           </Heading>
           Hi! I’m a fullstack developer from Bennett University and I love
           working with React, Typescript, and Python. I’m really passionate
@@ -46,7 +49,7 @@ const Skills = () => {
         </Text>
         <Image
           borderRadius={15}
-          src="http://placekitten.com/500/500"
+          src="https://github.com/guchii.png"
           alt="guchii"
           width={350}
           height={350}

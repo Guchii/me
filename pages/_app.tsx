@@ -8,21 +8,15 @@ import MyTheme from "../styles/theme";
 import "@fontsource/montserrat/700.css";
 import "@fontsource/plus-jakarta-sans/400.css";
 import { AppProps } from "next/app";
+import Layout from "../components/Layout";
 
-const MyApp = ({ Component, pageProps, router }: AppProps) => {
-  const niceProps = {
-    maxWidth: 1400,
-    mx: "auto",
-    height: "100%",
-    paddingInline: { sm: 6, "2xl": 0 },
-  };
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  
   return (
     <ChakraProvider theme={MyTheme} resetCSS>
-      <Header />
-      <Box minHeight={"calc(100vh - 88px - 96px)"}>
-        <Component niceProps={niceProps} {...pageProps} />
-      </Box>
-      <Footer />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ChakraProvider>
   );
 };

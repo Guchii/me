@@ -11,7 +11,6 @@ import { SiMyanimelist } from "react-icons/si";
 
 const Footer = () => {
   const router = useRouter();
-  const rd = (url) => window.open(url, "_blank");
   const buttonSize = useBreakpointValue({ base: "md", md: "lg" });
   const Links = [
     {
@@ -70,7 +69,9 @@ const Footer = () => {
                 aria-label={ll.name}
                 size={buttonSize}
                 icon={<ll.icon />}
-                onClick={() => rd(ll.link)}
+                as={Link}
+                href={ll.link}
+                isExternal
               />
             );
           })}

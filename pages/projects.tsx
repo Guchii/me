@@ -1,25 +1,13 @@
-import {
-  Box,
-  Flex,
-  Grid,
-  Heading,
-  HStack,
-  IconButton,
-  Link,
-  Spacer,
-  Stack,
-  Text,
-  Wrap,
-  WrapItem,
-} from "@chakra-ui/react";
-import Head from "next/head";
-import { BiLinkExternal } from "react-icons/bi";
-import { FaGithub } from "react-icons/fa";
-import projects from "../projects.json";
+import { Heading, HStack, IconButton, Link, Spacer, Stack, Text, VStack, Wrap, WrapItem } from '@chakra-ui/react';
+import Head from 'next/head';
+import { BiLinkExternal } from 'react-icons/bi';
+import { FaGithub } from 'react-icons/fa';
+
+import projects from '../projects.json';
 
 const Projects = () => {
   return (
-    <Box>
+    <VStack gap={8} alignItems="start">
       <Head>
         <title>Projects</title>
         <link
@@ -28,23 +16,25 @@ const Projects = () => {
         ></link>
       </Head>
       <Heading fontSize={"4xl"} textAlign={{ sm: "center", md: "left" }}>
-        My Projects
+        Projects
       </Heading>
-      <Wrap spacingX={4}>
+      <Wrap spacing={8} w="full">
         {projects.map((project, i) => (
-          <WrapItem
-          >
+          <WrapItem h="180px" w="400px" key={i}>
             <Stack
-              key={i}
-              height={"auto"}
+              height={"full"}
+              width={"full"}
               rounded={"xl"}
-              width={{ sm: "100%", md: "100%" }}
               boxShadow={"xl"}
-              px={8} py={6}
+              px={8}
+              py={6}
               textAlign={{ sm: "center", md: "left" }}
             >
-              <Heading fontSize={30}>{project.name}</Heading>
-              <Text>{project.desc}</Text>
+              <Heading fontSize={24}>{project.name}</Heading>
+              <Text>
+                {project.desc.slice(0, 40)}
+                {project.desc.length > 40 && "..."}
+              </Text>
               <Spacer />
               <HStack justify={{ sm: "center", md: "flex-start" }}>
                 <IconButton
@@ -55,7 +45,6 @@ const Projects = () => {
                   as={Link}
                   isExternal
                   href={project.source}
-                  // onClick={() => rd(project.source)}
                 />
                 <IconButton
                   aria-label="steam"
@@ -65,14 +54,13 @@ const Projects = () => {
                   isExternal
                   href={project.source}
                   icon={<BiLinkExternal />}
-                  // onClick={() => rd(project.url)}
                 />
               </HStack>
             </Stack>
           </WrapItem>
         ))}
       </Wrap>
-    </Box>
+    </VStack>
   );
 };
 

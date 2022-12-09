@@ -29,7 +29,7 @@ export default function Home() {
             Shivom Srivastava
           </Heading>
           <Text marginBottom={4} fontSize={{ sm: "md", md: "2xl" }}>
-            I&apos;m a frontend developer and I love to develop small and usable
+            I&apos;m a fullstack developer and I love to develop small and usable
             stuff.
           </Text>
           <Flex justifyContent={{ sm: "center", md: "flex-start" }} gap={3}>

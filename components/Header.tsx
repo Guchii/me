@@ -14,6 +14,7 @@ import {
 import NextLink from "next/link";
 import { BsFillMoonFill } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
+import {FiExternalLink} from "react-icons/fi";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -54,14 +55,14 @@ const Header = () => {
             marginLeft="auto"
             marginRight={3}
           />
-            <Button
-              as={Link}
-              isExternal
-              href="https://cv.shivom.tech"
-              colorScheme="purple"
-            >
-              Resume
-            </Button>
+          <Button
+            as={Link}
+            isExternal
+            href="https://cv.shivom.tech"
+            colorScheme="purple"
+          >
+            Resume
+          </Button>
           <Menu isLazy>
             <MenuButton
               display={{ sm: "flex", md: "none" }}
@@ -96,14 +97,14 @@ const LinkItem = ({
 }) => {
   if (!isExternal)
     return (
-      <NextLink href={href || "/"}>
-        <Button bg="none">{text}</Button>
-      </NextLink>
+      <Button as={NextLink} href={href || "/"} bg="none">
+        {text}
+      </Button>
     );
   return (
-    <Link href={href || "/"} isExternal>
-      <Button bg="none">{text}</Button>
-    </Link>
+    <Button as={Link} href={href || "/"} isExternal bg="none" gap={2}>
+      {text} <FiExternalLink />
+    </Button>
   );
 };
 
