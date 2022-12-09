@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@chakra-ui/react': ^1.7.3
+  '@chakra-ui/theme-tools': ^2.0.14
   '@emotion/react': ^11
   '@emotion/styled': ^11
   '@fontsource/montserrat': ^4.5.7
@@ -28,6 +29,7 @@ specifiers:
 
 dependencies:
   '@chakra-ui/react': 1.8.9_pzuq7y76udqbdwz45o2njkeqbm
+  '@chakra-ui/theme-tools': 2.0.14
   '@emotion/react': 11.10.5_kzbn2opkn2327fwg5yzwzya5o4
   '@emotion/styled': 11.10.5_qvatmowesywn4ye42qoh247szu
   '@fontsource/montserrat': 4.5.13
@@ -168,6 +170,10 @@ packages:
     dependencies:
       '@chakra-ui/system': 1.12.1_dovxhg2tvkkxkdnqyoum6wzcxm
       '@chakra-ui/theme-tools': 1.3.6_@chakra-ui+system@1.12.1
+    dev: false
+
+  /@chakra-ui/anatomy/2.1.0:
+    resolution: {integrity: sha512-E3jMPGqKuGTbt7mKtc8g/MOOenw2c4wqRC1vOypyFgmC8wsewdY+DJJNENF3atXAK7p5VMBKQfZ7ipNlHnDAwA==}
     dev: false
 
   /@chakra-ui/avatar/1.3.11_yqb4f7rvu3s265vnjrhxvzkv3i:
@@ -830,6 +836,15 @@ packages:
       '@chakra-ui/system': 1.12.1_dovxhg2tvkkxkdnqyoum6wzcxm
       '@chakra-ui/utils': 1.10.4
       '@ctrl/tinycolor': 3.5.0
+    dev: false
+
+  /@chakra-ui/theme-tools/2.0.14:
+    resolution: {integrity: sha512-lVcDmq5pyU0QbsIFKjt/iVUFDap7di2QHvPvGChA1YSjtg1PtuUi+BxEXWzp3Nfgw/N4rMvlBs+S0ynJypdwbg==}
+    peerDependencies:
+      '@chakra-ui/styled-system': '>=2.0.0'
+    dependencies:
+      '@chakra-ui/anatomy': 2.1.0
+      color2k: 2.0.0
     dev: false
 
   /@chakra-ui/theme/1.14.1_@chakra-ui+system@1.12.1:
@@ -1687,6 +1702,10 @@ packages:
   /color-name/1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
+
+  /color2k/2.0.0:
+    resolution: {integrity: sha512-DWX9eXOC4fbJNiuvdH4QSHvvfLWyFo9TuFp7V9OzdsbPAdrWAuYc8qvFP2bIQ/LKh4LrAVnJ6vhiQYPvAHdtTg==}
+    dev: false
 
   /compute-scroll-into-view/1.0.14:
     resolution: {integrity: sha512-mKDjINe3tc6hGelUMNDzuhorIUZ7kS7BwyY0r2wQd2HOH2tRuJykiC06iSEX8y1TuhNzvz4GcJnK16mM2J1NMQ==}

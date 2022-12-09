@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import Head from "next/head";
 import NextLink from "next/link";
-import { useState } from "react";
 
 export default function Home() {
   return (
@@ -37,7 +36,6 @@ export default function Home() {
               as={NextLink}
               size="lg"
               href="/projects"
-              colorScheme={"purple"}
             >
               Projects
             </Button>
@@ -46,7 +44,6 @@ export default function Home() {
               size="lg"
               href="https://cv.shivom.tech"
               isExternal
-              colorScheme={"purple"}
             >
               Resume
             </Button>

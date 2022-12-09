@@ -1,12 +1,13 @@
-import { Heading, HStack, IconButton, Link, Spacer, Stack, Text, VStack, Wrap, WrapItem } from '@chakra-ui/react';
+import { Heading, HStack, IconButton, Link, Spacer, Stack, Text, useColorModeValue, VStack, Wrap, WrapItem } from '@chakra-ui/react';
 import Head from 'next/head';
 import { BiLinkExternal } from 'react-icons/bi';
 import { FaGithub } from 'react-icons/fa';
 import projects from '../projects.json';
 
 const Projects = () => {
+  const cardColor = useColorModeValue('gruvbox.fg2', 'gruvbox.bg2');
   return (
-    <VStack gap={8} alignItems={{sm: "center", md: "start"}}>
+    <VStack gap={8} minHeight={"70vh"} justify="center" alignItems={{sm: "center", md: "start"}}>
       <Head>
         <title>Projects</title>
         <link
@@ -27,11 +28,13 @@ const Projects = () => {
               px={12}
               py={6}
               textAlign={{ sm: "center", md: "left" }}
+              bg={cardColor}
               _hover={{
                 boxShadow: "xl",
                 transform: "translateY(-2px)",
               }}
               transitionDuration="0.3s"
+              userSelect={"none"}
             >
               <Heading fontSize={24}>{project.name}</Heading>
               <Text>
@@ -44,14 +47,12 @@ const Projects = () => {
                   aria-label="source"
                   size={"lg"}
                   icon={<FaGithub />}
-                  colorScheme={"purple"}
                   as={Link}
                   isExternal
                   href={project.source}
                 />
                 <IconButton
                   aria-label="steam"
-                  colorScheme={"purple"}
                   size={"lg"}
                   as={Link}
                   isExternal

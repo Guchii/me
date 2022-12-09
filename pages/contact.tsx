@@ -85,7 +85,7 @@ const Contact = () => {
               name="_subject"
               value="New submission!"
             ></input>
-            <Button colorScheme={"purple"} type={"submit"}>
+            <Button variant={"primary"} type={"submit"}>
               Submit Response
             </Button>
           </form>

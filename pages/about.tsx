@@ -31,7 +31,7 @@ const Skills = () => {
             fontSize="4xl"
             _after={{
               content: '" "',
-              bg: "purple.300",
+              bg: "gruvbox.blue",
               height: "4px",
               width: "100%",
               display: "block",

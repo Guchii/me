@@ -67,7 +67,6 @@ const Header = () => {
             as={Link}
             isExternal
             href="https://cv.shivom.tech"
-            colorScheme="purple"
             display={{ sm: "none", md: "flex" }}
           >
             Resume

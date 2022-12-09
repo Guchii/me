@@ -48,6 +48,7 @@ const Footer = () => {
     <>
       <Flex
         paddingBlock={6}
+        paddingTop={{sm: 12, md: 6}}
         justifyContent={"space-between"}
         direction={{ sm: "column", md: "row" }}
         maxWidth={1400}
