@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "name": "HTML",
+    "full": "HyperText Markup Language",
+    "info": ""
+  },
+  {
+    "id": 2,
+    "name": "CSS",
+    "full": "Cascading StyleSheets",
+    "info": ""
+  },
+  {
+    "id": 3,
+    "name": "JS",
+    "full": "Javascript",
+    "info": ""
+  },
+  {
+    "id": 4,
+    "name": "React",
+    "info": "React is Good"
+  },
+  {
+    "id": 5,
+    "name": "Next JS",
+    "info": ""
+  },
+  {
+    "id": 6,
+    "name": "Figma",
+    "info": ""
+  },
+  {
+    "id": 7,
+    "name": "LINUX",
+    "info": ""
+  }
+]

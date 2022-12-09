@@ -5,64 +5,23 @@ import {
   Heading,
   HStack,
   IconButton,
+  Link,
   Spacer,
   Stack,
   Text,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { BiLinkExternal } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
+import projects from "../projects.json";
 
-const Projects = ({ niceProps }) => {
-  const projects = [
-    {
-      name: "Plug Talk",
-      desc: "Open source community chat app",
-      source: "https://github.com/teamPlugTalk/PlugTalk",
-      url: "https://plugtalk.netlify.app/",
-    },
-    {
-      name: "Dump Code Here",
-      desc: "Polished paste bin, Runs on serverless functions",
-      source: "https://github.com/guchii/dumpcodehere",
-      url: "https://dumpcodehere.vercel.app/",
-    },
-    {
-      name: "guchii.github.io",
-      desc: "This very website",
-      source: "https://github.com/guchii/guchii.github.io",
-      url: "/",
-    },
-    {
-      name: "The Free Times",
-      desc: "Free to read e news paper",
-      source: "https://github.com/guchii/the-free-times",
-      url: "https://guchii.github.io/the-free-times",
-    },
-    {
-      name: "Nara Link Locker",
-      desc: "Minimalistic link locker web application",
-      source: "https://github.com/guchii/nara",
-      url: "https://narall.surge.sh",
-    },
-    {
-      name: "The Pocket Gita",
-      desc: "Beautiful Gita Reader Web Application",
-      source: "https://github.com/guchii/the-pocket-gita",
-      url: "https://guchii.github.io/the-pocket-gita",
-    },
-    {
-      name: "The Pocket Gita API",
-      desc: "Free to use Gita API",
-      source: "https://github.com/guchii/the-pocket-gita-api",
-      url: "https://the-pocket-gita.herokuapp.com/",
-    },
-  ];
-  const rd = (url) => window.open(url, "_blank");
+const Projects = () => {
   return (
-    <Box {...niceProps}>
+    <Box>
       <Head>
-        <title>Projects | Shivom Srivastava</title>
+        <title>Projects</title>
         <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍜</text></svg>"
@@ -71,45 +30,48 @@ const Projects = ({ niceProps }) => {
       <Heading fontSize={"4xl"} textAlign={{ sm: "center", md: "left" }}>
         My Projects
       </Heading>
-      <Grid
-        gap={30}
-        templateColumns={"repeat(auto-fit, minmax(320px, 1fr))"}
-        overflowY={"auto"}
-        mb={6}
-      >
+      <Wrap spacingX={4}>
         {projects.map((project, i) => (
-          <Stack
-            key={i}
-            height={"auto"}
-            rounded={"xl"}
-            width={{ sm: "100%", md: "100%" }}
-            boxShadow={"xl"}
-            paddingBlock={8}
-            paddingInline={4}
-            textAlign={{ sm: "center", md: "left" }}
+          <WrapItem
           >
-            <Heading fontSize={30}>{project.name}</Heading>
-            <Text>{project.desc}</Text>
-            <Spacer />
-            <HStack justify={{ sm: "center", md: "flex-start" }}>
-              <IconButton
-                aria-label="source"
-                size={"lg"}
-                icon={<FaGithub />}
-                colorScheme={"purple"}
-                onClick={() => rd(project.source)}
-              />
-              <IconButton
-                aria-label="steam"
-                colorScheme={"purple"}
-                size={"lg"}
-                icon={<BiLinkExternal />}
-                onClick={() => rd(project.url)}
-              />
-            </HStack>
-          </Stack>
+            <Stack
+              key={i}
+              height={"auto"}
+              rounded={"xl"}
+              width={{ sm: "100%", md: "100%" }}
+              boxShadow={"xl"}
+              px={8} py={6}
+              textAlign={{ sm: "center", md: "left" }}
+            >
+              <Heading fontSize={30}>{project.name}</Heading>
+              <Text>{project.desc}</Text>
+              <Spacer />
+              <HStack justify={{ sm: "center", md: "flex-start" }}>
+                <IconButton
+                  aria-label="source"
+                  size={"lg"}
+                  icon={<FaGithub />}
+                  colorScheme={"purple"}
+                  as={Link}
+                  isExternal
+                  href={project.source}
+                  // onClick={() => rd(project.source)}
+                />
+                <IconButton
+                  aria-label="steam"
+                  colorScheme={"purple"}
+                  size={"lg"}
+                  as={Link}
+                  isExternal
+                  href={project.source}
+                  icon={<BiLinkExternal />}
+                  // onClick={() => rd(project.url)}
+                />
+              </HStack>
+            </Stack>
+          </WrapItem>
         ))}
-      </Grid>
+      </Wrap>
     </Box>
   );
 };

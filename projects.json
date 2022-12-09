@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Plug Talk",
+    "desc": "Open source community chat app",
+    "source": "https://github.com/teamPlugTalk/PlugTalk",
+    "url": "https://plugtalk.netlify.app/"
+  },
+  {
+    "name": "Dump Code Here",
+    "desc": "Polished paste bin, Runs on serverless functions",
+    "source": "https://github.com/guchii/dumpcodehere",
+    "url": "https://dumpcodehere.vercel.app/"
+  },
+  {
+    "name": "guchii.github.io",
+    "desc": "This very website",
+    "source": "https://github.com/guchii/guchii.github.io",
+    "url": "/"
+  },
+  {
+    "name": "The Free Times",
+    "desc": "Free to read e news paper",
+    "source": "https://github.com/guchii/the-free-times",
+    "url": "https://guchii.github.io/the-free-times"
+  },
+  {
+    "name": "Nara Link Locker",
+    "desc": "Minimalistic link locker web application",
+    "source": "https://github.com/guchii/nara",
+    "url": "https://narall.surge.sh"
+  },
+  {
+    "name": "The Pocket Gita",
+    "desc": "Beautiful Gita Reader Web Application",
+    "source": "https://github.com/guchii/the-pocket-gita",
+    "url": "https://guchii.github.io/the-pocket-gita"
+  },
+  {
+    "name": "The Pocket Gita API",
+    "desc": "Free to use Gita API",
+    "source": "https://github.com/guchii/the-pocket-gita-api",
+    "url": "https://the-pocket-gita.herokuapp.com/"
+  }
+]

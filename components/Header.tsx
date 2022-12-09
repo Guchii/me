@@ -31,8 +31,8 @@ const Header = () => {
         fontSize="lg"
         paddingInline={{ sm: 6, "2xl": 0 }}
       >
-        <NextLink href="/" passHref>
-          <Text as="a" fontWeight={"black"} fontSize="xl">
+        <NextLink href="/">
+          <Text fontWeight={"black"} fontSize="xl">
             SS
           </Text>
         </NextLink>
@@ -54,13 +54,14 @@ const Header = () => {
             marginLeft="auto"
             marginRight={3}
           />
-          <Button
-            onClick={() => window.open("/Resume.pdf", "_self")}
-            colorScheme="purple"
-            display={{ sm: "none", md: "block" }}
-          >
-            Resume
-          </Button>
+            <Button
+              as={Link}
+              isExternal
+              href="https://cv.shivom.tech"
+              colorScheme="purple"
+            >
+              Resume
+            </Button>
           <Menu isLazy>
             <MenuButton
               display={{ sm: "flex", md: "none" }}

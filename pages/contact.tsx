@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import Head from "next/head";
 
-const Contact = ({ niceProps }) => {
+const Contact = () => {
   return (
     <>
       <Head>
@@ -24,7 +24,6 @@ const Contact = ({ niceProps }) => {
         ></link>
       </Head>
       <Flex
-        {...niceProps}
         justifyContent={"center"}
         alignItems={"center"}
         direction={{ sm: "column", md: "row" }}

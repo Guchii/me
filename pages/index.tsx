@@ -1,10 +1,9 @@
-import { Button, Flex, Heading, HStack, Image, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { Button, Flex, Heading, HStack, Image, Link, Text } from "@chakra-ui/react";
 import Head from "next/head";
 import NextLink from "next/link";
 import { useState } from "react";
 
-export default function Home({ niceProps }) {
+export default function Home() {
   return (
     <>
       <HStack
@@ -12,11 +11,9 @@ export default function Home({ niceProps }) {
         justifyContent={"center"}
         alignItems={"center"}
         gap={8}
-        {...niceProps}
       >
         <Flex
           flexDirection={"column"}
-          fontSize={20}
           height={"100%"}
           textAlign={{ sm: "center", md: "start" }}
           justify="center"
@@ -31,29 +28,15 @@ export default function Home({ niceProps }) {
           >
             Shivom Srivastava
           </Heading>
-          <Text marginBottom={8} fontSize={{ sm: "md", md: "2xl" }}>
-            I&apos;m a{" "}
-            <Text
-              display={"inline"}
-              bgGradient="linear(to-l, #7928CA, #FF0080)"
-              bgClip="text"
-              fontWeight="bold"
-            >
-              frontend developer
-            </Text>{" "}
-            and I love to develop small and usable stuff.
+          <Text marginBottom={4} fontSize={{ sm: "md", md: "2xl" }}>
+            I&apos;m a frontend developer and I love to develop small and usable
+            stuff.
           </Text>
           <Flex justifyContent={{ sm: "center", md: "flex-start" }} gap={3}>
-            <NextLink href="/projects" passHref>
-              <Button as="a" colorScheme={"purple"}>
-                Projects
-              </Button>
-            </NextLink>
-            <NextLink href="/Resume.pdf" passHref>
-              <Button as="a" colorScheme={"purple"}>
-                Resume
-              </Button>
-            </NextLink>
+            <Button as={NextLink} href="/projects" colorScheme={"purple"}>
+              Projects
+            </Button>
+            <Button as={Link} href="https://cv.shivom.tech" isExternal colorScheme={"purple"}>Resume</Button>
           </Flex>
         </Flex>
         <Image
