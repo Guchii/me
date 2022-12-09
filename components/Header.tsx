@@ -10,11 +10,12 @@ import {
   MenuList,
   Text,
   useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
-import {FiExternalLink} from "react-icons/fi";
+import { FiExternalLink } from "react-icons/fi";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -31,6 +32,11 @@ const Header = () => {
         mx="auto"
         fontSize="lg"
         paddingInline={{ sm: 6, "2xl": 0 }}
+        position="sticky"
+        top={0}
+        zIndex={1000}
+        // bg={{ sm: useColorModeValue("white", "gray.800"), md: "none" }}
+        backdropFilter={{ sm: "blur(10px)", md: "none" }}
       >
         <NextLink href="/">
           <Text fontWeight={"black"} fontSize="xl">
@@ -50,7 +56,9 @@ const Header = () => {
         <Flex w="100%">
           <IconButton
             aria-label="Search database"
-            icon={colorMode === "light" ? <BsFillMoonFill /> :  <BsFillSunFill />}
+            icon={
+              colorMode === "light" ? <BsFillMoonFill /> : <BsFillSunFill />
+            }
             onClick={toggleColorMode}
             marginLeft="auto"
             marginRight={3}

@@ -34,11 +34,5 @@
     "desc": "Beautiful Gita Reader Web Application",
     "source": "https://github.com/guchii/the-pocket-gita",
     "url": "https://guchii.github.io/the-pocket-gita"
-  },
-  {
-    "name": "The Pocket Gita API",
-    "desc": "Free to use Gita API",
-    "source": "https://github.com/guchii/the-pocket-gita-api",
-    "url": "https://the-pocket-gita.herokuapp.com/"
   }
 ]

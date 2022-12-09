@@ -1,4 +1,12 @@
-import { Button, Flex, Heading, HStack, Image, Link, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  Link,
+  Text,
+} from "@chakra-ui/react";
 import Head from "next/head";
 import NextLink from "next/link";
 import { useState } from "react";
@@ -19,18 +27,29 @@ export default function Home() {
           justify="center"
           gap={2}
         >
-          <Heading fontSize="4xl">
-            Hello! My name is Shivom
-          </Heading>
+          <Heading fontSize="4xl">Hello! My name is Shivom</Heading>
           <Text marginBottom={2} fontSize={{ sm: "md", md: "xl" }}>
-            I&apos;m a fullstack developer and I love to develop small and usable
-            stuff.
+            I&apos;m a fullstack developer and I love to develop small and
+            usable stuff.
           </Text>
           <Flex justifyContent={{ sm: "center", md: "flex-start" }} gap={3}>
-            <Button as={NextLink} size="lg" href="/projects" colorScheme={"purple"}>
+            <Button
+              as={NextLink}
+              size="lg"
+              href="/projects"
+              colorScheme={"purple"}
+            >
               Projects
             </Button>
-            <Button as={Link} size="lg" href="https://cv.shivom.tech" isExternal colorScheme={"purple"}>Resume</Button>
+            <Button
+              as={Link}
+              size="lg"
+              href="https://cv.shivom.tech"
+              isExternal
+              colorScheme={"purple"}
+            >
+              Resume
+            </Button>
           </Flex>
         </Flex>
         <Image

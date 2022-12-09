@@ -2,12 +2,11 @@ import { Heading, HStack, IconButton, Link, Spacer, Stack, Text, VStack, Wrap, W
 import Head from 'next/head';
 import { BiLinkExternal } from 'react-icons/bi';
 import { FaGithub } from 'react-icons/fa';
-
 import projects from '../projects.json';
 
 const Projects = () => {
   return (
-    <VStack gap={8} alignItems="start">
+    <VStack gap={8} alignItems={{sm: "center", md: "start"}}>
       <Head>
         <title>Projects</title>
         <link
@@ -18,15 +17,14 @@ const Projects = () => {
       <Heading fontSize={"4xl"} textAlign={{ sm: "center", md: "left" }}>
         Projects
       </Heading>
-      <Wrap spacing={8} w="full">
+      <Wrap spacing={8} w="full" justify={{sm: "center", md: "start"}}>
         {projects.map((project, i) => (
-          <WrapItem h="180px" w="400px" key={i}>
+          <WrapItem h="200px" w="400px" key={i}>
             <Stack
               height={"full"}
               width={"full"}
-              rounded={"xl"}
               boxShadow={"lg"}
-              px={8}
+              px={12}
               py={6}
               textAlign={{ sm: "center", md: "left" }}
               _hover={{
@@ -37,8 +35,8 @@ const Projects = () => {
             >
               <Heading fontSize={24}>{project.name}</Heading>
               <Text>
-                {project.desc.slice(0, 40)}
-                {project.desc.length > 40 && "..."}
+                {project.desc.slice(0, 50)}
+                {project.desc.length > 50 && "..."}
               </Text>
               <Spacer />
               <HStack justify={{ sm: "center", md: "flex-start" }}>
