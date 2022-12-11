@@ -2,7 +2,7 @@ FROM gplane/pnpm:latest as builder
 WORKDIR /app
 COPY . .
 RUN pnpm install --frozen-lockfile
-ENV NODE_OPTIONS="--max-old-space-size=1024"
+ENV NODE_OPTIONS="--max-old-space-size=512"
 RUN pnpm export
 
 FROM node:lts-alpine
