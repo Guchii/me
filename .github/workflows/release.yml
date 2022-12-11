@@ -27,7 +27,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: neat lowercase name
+      - name: lowercase name
         id: image_name
         run: |
           image_name="${{ env.REGISTRY }}/${{ github.actor }}/me:latest"
@@ -48,3 +48,20 @@ jobs:
           tags: ${{ steps.image_name.outputs.image_name }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+  
+  deploy:
+    needs: build
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.COOLER }}
+          script: |
+            bash -c 'docker rmi -f "ghcr.io/guchii/me:latest"
+            docker pull "ghcr.io/guchii/me:latest"
+            SHAPROCESS=$(docker inspect --format="{{index .RepoDigests 0}}" "ghcr.io/guchii/me:latest")
+            dokku git:from-image me "$SHAPROCESS"'
+          
