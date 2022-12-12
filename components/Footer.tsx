@@ -74,9 +74,7 @@ const Footer = () => {
                 href={ll.link}
                 isExternal
                 transitionDuration="0.3s"
-                _hover={{
-                  transform: "scale(1.1)",
-                }}
+                variant="footer"
               />
             );
           })}

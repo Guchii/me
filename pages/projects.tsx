@@ -1,13 +1,43 @@
-import { Heading, HStack, IconButton, Link, Spacer, Stack, Text, useColorModeValue, VStack, Wrap, WrapItem } from '@chakra-ui/react';
-import Head from 'next/head';
-import { BiLinkExternal } from 'react-icons/bi';
-import { FaGithub } from 'react-icons/fa';
-import projects from '../projects.json';
+import {
+  Heading,
+  HStack,
+  IconButton,
+  Link,
+  Spacer,
+  Stack,
+  Text,
+  useColorMode,
+  useColorModeValue,
+  VStack,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
+import Head from "next/head";
+import { useMemo } from "react";
+import { BiLinkExternal } from "react-icons/bi";
+import { FaGithub } from "react-icons/fa";
+
+import projects from "../projects.json";
 
 const Projects = () => {
-  const cardColor = useColorModeValue('gruvbox.fg2', 'gruvbox.bg2');
+  const { colorMode } = useColorMode();
+  const menuColors = useMemo(() => {
+    const light = colorMode === "light";
+    return {
+      card: light ? "gruvbox.fg2" : "gruvbox.bg2",
+      button: {
+        bg: light ? "gruvbox.bg2" : "gruvbox.fg2",
+        fg: light ? "gruvbox.fg" : "gruvbox.bg",
+      },
+    };
+  }, [colorMode]);
   return (
-    <VStack gap={8} minHeight={"70vh"} justify="center" alignItems={{sm: "center", md: "start"}}>
+    <VStack
+      gap={8}
+      minHeight={"70vh"}
+      justify="center"
+      alignItems={{ sm: "center", md: "start" }}
+    >
       <Head>
         <title>Projects</title>
         <link
@@ -18,7 +48,7 @@ const Projects = () => {
       <Heading fontSize={"4xl"} textAlign={{ sm: "center", md: "left" }}>
         Projects
       </Heading>
-      <Wrap spacing={8} w="full" justify={{sm: "center", md: "start"}}>
+      <Wrap spacing={8} w="full" justify={{ sm: "center", md: "start" }}>
         {projects.map((project, i) => (
           <WrapItem h="200px" w="400px" key={i}>
             <Stack
@@ -28,7 +58,7 @@ const Projects = () => {
               px={12}
               py={6}
               textAlign={{ sm: "center", md: "left" }}
-              bg={cardColor}
+              bg={menuColors.card}
               _hover={{
                 boxShadow: "xl",
                 transform: "translateY(-2px)",
@@ -50,6 +80,15 @@ const Projects = () => {
                   as={Link}
                   isExternal
                   href={project.source}
+                  bg={menuColors.button.bg}
+                  color={menuColors.button.fg}
+                  _hover= {{
+                    bg: menuColors.button.bg,
+
+                  }}
+                  _active= {{
+                    bg: menuColors.button.bg,
+                  }}
                 />
                 <IconButton
                   aria-label="steam"
@@ -58,6 +97,14 @@ const Projects = () => {
                   isExternal
                   href={project.source}
                   icon={<BiLinkExternal />}
+                  bg={menuColors.button.bg}
+                  color={menuColors.button.fg}
+                  _hover= {{
+                    bg: menuColors.button.bg,
+                  }}
+                  _active= {{
+                    bg: menuColors.button.bg,
+                  }}
                 />
               </HStack>
             </Stack>

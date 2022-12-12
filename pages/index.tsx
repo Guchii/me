@@ -6,11 +6,13 @@ import {
   Image,
   Link,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import NextLink from "next/link";
 
 export default function Home() {
+  const nameColor = useColorModeValue("gruvbox.red", "gruvbox.yellow")
   return (
     <>
       <HStack
@@ -26,7 +28,7 @@ export default function Home() {
           justify="center"
           gap={2}
         >
-          <Heading fontSize="4xl">Hello! My name is Shivom</Heading>
+          <Heading fontSize="4xl"><Text display={"inline"} color="gruvbox.purple1">Hello!</Text> My name is <Text display={"inline"} color={nameColor}>Shivom</Text></Heading>
           <Text marginBottom={2} fontSize={{ sm: "md", md: "xl" }}>
             I&apos;m a fullstack developer and I love to develop small and
             usable stuff.
@@ -34,16 +36,18 @@ export default function Home() {
           <Flex justifyContent={{ sm: "center", md: "flex-start" }} gap={3}>
             <Button
               as={NextLink}
-              size="lg"
+              size="md"
               href="/projects"
+              variant={"primary"}
             >
               Projects
             </Button>
             <Button
               as={Link}
-              size="lg"
+              size="md"
               href="https://cv.shivom.tech"
               isExternal
+              variant={"primary"}
             >
               Resume
             </Button>

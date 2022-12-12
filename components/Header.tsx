@@ -16,9 +16,19 @@ import NextLink from "next/link";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FiExternalLink } from "react-icons/fi";
+import { useMemo } from "react";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const menuColors = useMemo(() => {
+    console.log("recomputhing menu colors");
+    const light = colorMode === "light";
+    return {
+      bg: light ? "gruvbox.bg2" : "gruvbox.fg",
+      fg: light ? "gruvbox.fg" : "gruvbox.bg",
+      hover: light ? "gruvbox.bg3" : "gruvbox.fg3",
+    };
+  }, [colorMode]);
   return (
     <>
       <Flex
@@ -36,7 +46,7 @@ const Header = () => {
         top={0}
         zIndex={1000}
         // bg={{ sm: useColorModeValue("white", "gray.800"), md: "none" }}
-        backdropFilter={{ sm: "blur(10px)", md: "none" }}
+        // backdropFilter={{ sm: "blur(10px)", md: "none" }}
       >
         <NextLink href="/">
           <Text fontWeight={"black"} fontSize="xl">
@@ -62,12 +72,14 @@ const Header = () => {
             onClick={toggleColorMode}
             marginLeft="auto"
             marginRight={3}
+            variant="header"
           />
           <Button
             as={Link}
             isExternal
             href="https://cv.shivom.tech"
             display={{ sm: "none", md: "flex" }}
+            variant="header"
           >
             Resume
           </Button>
@@ -76,12 +88,19 @@ const Header = () => {
               display={{ sm: "flex", md: "none" }}
               as={IconButton}
               icon={<GiHamburgerMenu />}
+              variant="header"
             ></MenuButton>
             <MenuDivider />
-            <MenuList>
+            <MenuList bg={menuColors.bg} color={menuColors.fg}>
               {["About", "Projects", "Contact"].map((nice) => (
                 <NextLink key={nice} href={`/${nice.toLowerCase()}`} passHref>
-                  <MenuItem closeOnSelect as="a">
+                  <MenuItem
+                    closeOnSelect
+                    as="a"
+                    _hover={{
+                      bg: menuColors.hover,
+                    }}
+                  >
                     {nice}
                   </MenuItem>
                 </NextLink>
@@ -103,15 +122,22 @@ const LinkItem = ({
   href: string;
   isExternal?: boolean;
 }) => {
-  if (!isExternal)
-    return (
-      <Button as={NextLink} href={href || "/"} bg="none">
-        {text}
-      </Button>
-    );
   return (
-    <Button as={Link} href={href || "/"} isExternal bg="none" gap={2}>
-      {text} <FiExternalLink />
+    <Button
+      _hover={{
+        bg: useColorModeValue("gruvbox.fg2", "gruvbox.bg2"),
+      }}
+      _active={{
+        bg: "none",
+      }}
+      as={NextLink}
+      href={href || "/"}
+      bg="none"
+      passHref
+    >
+      <Link w="full" display={"inline-flex"} gap={2}>
+        {text} {isExternal ? <FiExternalLink /> : null}
+      </Link>
     </Button>
   );
 };
