@@ -7,17 +7,14 @@ import {
   Stack,
   Text,
   useColorMode,
-  useColorModeValue,
   VStack,
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
 import Head from "next/head";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
-
-import projects from "../projects.json";
 
 const Projects = () => {
   const { colorMode } = useColorMode();
@@ -31,6 +28,23 @@ const Projects = () => {
       },
     };
   }, [colorMode]);
+  const [myProjects, setMyProjects] = useState<
+    Array<{
+      name: string;
+      description: string;
+      url: string;
+      homepageUrl: string;
+    }>
+  >([]);
+  const fetchProjects = async () => {
+    const response = await fetch("/projects.json");
+    const data = await response.json();
+    console.log(data);
+    setMyProjects(data);
+  };
+  useEffect(() => {
+    fetchProjects();
+  }, []);
   return (
     <VStack
       gap={8}
@@ -49,7 +63,7 @@ const Projects = () => {
         Projects
       </Heading>
       <Wrap spacing={8} w="full" justify={{ sm: "center", md: "start" }}>
-        {projects.map((project, i) => (
+        {myProjects.map((project, i) => (
           <WrapItem h="200px" w="400px" key={i}>
             <Stack
               height={"full"}
@@ -66,43 +80,44 @@ const Projects = () => {
               transitionDuration="0.3s"
               userSelect={"none"}
             >
-              <Heading fontSize={24}>{project.name}</Heading>
               <Text>
-                {project.desc.slice(0, 50)}
-                {project.desc.length > 50 && "..."}
+                {project.description || "No Description for the project :("}
               </Text>
               <Spacer />
-              <HStack justify={{ sm: "center", md: "flex-start" }}>
+              <HStack
+                justify={{ sm: "center", md: "flex-start" }}
+                alignItems={"center"}
+              >
+                <Heading marginRight={"auto"} wordBreak="break-all" maxW={"180px"} fontSize={24}>{project.name}</Heading>
                 <IconButton
                   aria-label="source"
                   size={"lg"}
                   icon={<FaGithub />}
                   as={Link}
                   isExternal
-                  href={project.source}
+                  href={project.url}
                   bg={menuColors.button.bg}
                   color={menuColors.button.fg}
-                  _hover= {{
+                  _hover={{
                     bg: menuColors.button.bg,
-
                   }}
-                  _active= {{
+                  _active={{
                     bg: menuColors.button.bg,
                   }}
                 />
                 <IconButton
-                  aria-label="steam"
+                  aria-label="homepage"
                   size={"lg"}
                   as={Link}
                   isExternal
-                  href={project.source}
+                  href={project.homepageUrl ||  project.url}
                   icon={<BiLinkExternal />}
                   bg={menuColors.button.bg}
                   color={menuColors.button.fg}
-                  _hover= {{
+                  _hover={{
                     bg: menuColors.button.bg,
                   }}
-                  _active= {{
+                  _active={{
                     bg: menuColors.button.bg,
                   }}
                 />

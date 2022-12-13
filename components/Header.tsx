@@ -45,8 +45,6 @@ const Header = () => {
         position="sticky"
         top={0}
         zIndex={1000}
-        // bg={{ sm: useColorModeValue("white", "gray.800"), md: "none" }}
-        // backdropFilter={{ sm: "blur(10px)", md: "none" }}
       >
         <NextLink href="/">
           <Text fontWeight={"black"} fontSize="xl">
@@ -96,12 +94,12 @@ const Header = () => {
                 <NextLink key={nice} href={`/${nice.toLowerCase()}`} passHref>
                   <MenuItem
                     closeOnSelect
-                    as="a"
+                    bg={menuColors.bg}
                     _hover={{
                       bg: menuColors.hover,
                     }}
                   >
-                    {nice}
+                    <Link>{nice}</Link>
                   </MenuItem>
                 </NextLink>
               ))}
