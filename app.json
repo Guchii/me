@@ -1,0 +1,12 @@
+{
+  "cron": [
+    {
+      "command": "node ./fetch.mjs",
+      "schedule": "0 */10 * * *"
+    },
+    {
+      "command": "date >> /tmp/cron.log",
+      "schedule": "* * * * *"
+    }
+  ]
+}
