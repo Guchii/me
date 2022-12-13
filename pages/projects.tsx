@@ -16,7 +16,7 @@ import { useEffect, useMemo, useState } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 
-const Projects = () => {
+const Projects = ({ data }: { data: Projects }) => {
   const { colorMode } = useColorMode();
   const menuColors = useMemo(() => {
     const light = colorMode === "light";
@@ -28,23 +28,6 @@ const Projects = () => {
       },
     };
   }, [colorMode]);
-  const [myProjects, setMyProjects] = useState<
-    Array<{
-      name: string;
-      description: string;
-      url: string;
-      homepageUrl: string;
-    }>
-  >([]);
-  const fetchProjects = async () => {
-    const response = await fetch("/projects.json");
-    const data = await response.json();
-    console.log(data);
-    setMyProjects(data);
-  };
-  useEffect(() => {
-    fetchProjects();
-  }, []);
   return (
     <VStack
       gap={8}
@@ -59,11 +42,22 @@ const Projects = () => {
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍜</text></svg>"
         ></link>
       </Head>
-      <Heading fontSize={"4xl"} textAlign={{ sm: "center", md: "left" }}>
-        Projects
+      <Heading
+        fontSize={"4xl"}
+        display="flex"
+        alignItems={"center"}
+        gap={4}
+        justifyContent={{ sm: "center", md: "space-between" }}
+        w="full"
+        textAlign={{ sm: "center", md: "left" }}
+      >
+        Projects{" "}
+        <Text display={{ sm: "none", md: "block" }} fontSize={"md"}>
+          Last Updated: {new Date(data.updated_at).toLocaleString()}
+        </Text>
       </Heading>
       <Wrap spacing={8} w="full" justify={{ sm: "center", md: "start" }}>
-        {myProjects.map((project, i) => (
+        {data.projects.map((project, i) => (
           <WrapItem h="200px" w="400px" key={i}>
             <Stack
               height={"full"}
@@ -88,7 +82,14 @@ const Projects = () => {
                 justify={{ sm: "center", md: "flex-start" }}
                 alignItems={"center"}
               >
-                <Heading marginRight={"auto"} wordBreak="break-all" maxW={"180px"} fontSize={24}>{project.name}</Heading>
+                <Heading
+                  marginRight={"auto"}
+                  wordBreak="break-all"
+                  maxW={"180px"}
+                  fontSize={24}
+                >
+                  {project.name}
+                </Heading>
                 <IconButton
                   aria-label="source"
                   size={"lg"}
@@ -110,7 +111,7 @@ const Projects = () => {
                   size={"lg"}
                   as={Link}
                   isExternal
-                  href={project.homepageUrl ||  project.url}
+                  href={project.homepageUrl || project.url}
                   icon={<BiLinkExternal />}
                   bg={menuColors.button.bg}
                   color={menuColors.button.fg}
