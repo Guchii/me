@@ -2,7 +2,6 @@
 
 const fs = require("fs")
 
-$.verbose = false
 
 while (true) {
     const response = await fetch('https://api.github.com/graphql', {
@@ -37,6 +36,9 @@ while (true) {
     if (!!data.data && data.data.user.pinnedItems.nodes.length !== 0) {
         const final = { updated_at: new Date().toISOString(), projects: data.data.user.pinnedItems.nodes }
         fs.writeFileSync("projects.json", JSON.stringify(final, null, 2))
+        console.log("Updated projects.json")
+    } else {
+        console.log("Failed to update projects.json")
     }
-    await $`sleep 36000`
+    await $`sleep 360`
 }

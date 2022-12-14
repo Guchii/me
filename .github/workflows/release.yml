@@ -48,6 +48,8 @@ jobs:
           tags: ${{ steps.image_name.outputs.image_name }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            GITHUB_TOKEN=${{ secrets.PAT }}
   
   deploy:
     needs: build
