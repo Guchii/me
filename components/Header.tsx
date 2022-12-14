@@ -21,7 +21,6 @@ import { useMemo } from "react";
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const menuColors = useMemo(() => {
-    console.log("recomputhing menu colors");
     const light = colorMode === "light";
     return {
       bg: light ? "gruvbox.bg2" : "gruvbox.fg",
