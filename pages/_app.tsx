@@ -1,14 +1,13 @@
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import '../styles/globals.css';
+import '@fontsource/space-mono';
 
-import "../styles/globals.css";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import MyTheme from "../styles/theme";
+import { ChakraProvider } from '@chakra-ui/react';
+import { AppProps } from 'next/app';
+import { useEffect, useState } from 'react';
 
-import "@fontsource/space-mono"
-import { AppProps } from "next/app";
-import Layout from "../components/Layout";
-import { useEffect, useState } from "react";
+import Layout from '../components/Layout';
+import Transition from '../components/Transition';
+import MyTheme from '../styles/theme';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [data, setData] = useState<Projects>({ updated_at: "", projects: [] });
@@ -23,7 +22,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider theme={MyTheme} resetCSS>
       <Layout>
-        <Component data={data} {...pageProps} />
+        <Transition>
+          <Component data={data} {...pageProps} />
+        </Transition>
       </Layout>
     </ChakraProvider>
   );
