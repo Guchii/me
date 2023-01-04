@@ -21,7 +21,6 @@ const Transition = ({ children }: { children: ReactNode }) => {
       },
     },
   };
-  console.log(asPath);
   return (
     <Box minH={"inherit"} overflow="hidden" w="full" as={motion.div}>
       <AnimatePresence initial={false} exitBeforeEnter>
