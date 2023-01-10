@@ -1,13 +1,13 @@
-import '../styles/globals.css';
-import '@fontsource/space-mono';
+import "../styles/globals.css";
+import "@fontsource/space-mono";
 
-import { ChakraProvider } from '@chakra-ui/react';
-import { AppProps } from 'next/app';
-import { useEffect, useState } from 'react';
+import { ChakraProvider } from "@chakra-ui/react";
+import { AppProps } from "next/app";
+import { useEffect, useState } from "react";
 
-import Layout from '../components/Layout';
-import Transition from '../components/Transition';
-import MyTheme from '../styles/theme';
+import Layout from "components/Layout";
+import Transition from "components/Transition";
+import MyTheme from "styles/theme";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [data, setData] = useState<Projects>({ updated_at: "", projects: [] });

@@ -23,7 +23,7 @@ const Transition = ({ children }: { children: ReactNode }) => {
   };
   return (
     <Box minH={"inherit"} overflow="hidden" w="full" as={motion.div}>
-      <AnimatePresence initial={false} exitBeforeEnter>
+      <AnimatePresence initial={true} mode="wait">
         <Box
           variants={variants}
           animate="in"
