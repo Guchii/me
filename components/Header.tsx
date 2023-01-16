@@ -54,7 +54,6 @@ const Header = () => {
           <LinkItem text="About" href="/about" />
           <LinkItem text="Projects" href="/projects" />
           <LinkItem text="Contact" href="/contact" />
-          <LinkItem text="Play" href="/play" />
           <LinkItem
             text="Blog"
             href="https://guchiii.hashnode.dev/"
