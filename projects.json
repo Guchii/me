@@ -1,0 +1,53 @@
+{
+  "updated_at": "2022-12-13T11:07:46.980Z",
+  "projects": [
+    {
+      "name": "w3b",
+      "description": "A set of simple and useful hooks for react facilitating use of the Ethereum Provider API",
+      "url": "https://github.com/Guchii/w3b",
+      "homepageUrl": "",
+      "createdAt": "2022-12-10T11:23:32Z",
+      "updatedAt": "2022-12-11T06:08:14Z"
+    },
+    {
+      "name": "PlugTalk",
+      "description": "A free and open source community chat app.",
+      "url": "https://github.com/Guchii/PlugTalk",
+      "homepageUrl": "https://plugtalk.netlify.app/",
+      "createdAt": "2021-10-06T06:29:46Z",
+      "updatedAt": "2022-03-25T12:41:30Z"
+    },
+    {
+      "name": "the-free-times",
+      "description": "Free to read e-paper with concise articles and many categories",
+      "url": "https://github.com/Guchii/the-free-times",
+      "homepageUrl": "https://guchii.github.io/the-free-times/",
+      "createdAt": "2022-01-04T07:28:15Z",
+      "updatedAt": "2022-01-08T16:38:25Z"
+    },
+    {
+      "name": "dumpcodehere",
+      "description": "A paste bin like website to share your text/code with the world.",
+      "url": "https://github.com/Guchii/dumpcodehere",
+      "homepageUrl": "https://dumpcodehere.vercel.app",
+      "createdAt": "2021-11-11T11:54:25Z",
+      "updatedAt": "2021-12-25T10:42:37Z"
+    },
+    {
+      "name": "dots",
+      "description": "my dotfiles for a gnu/linux setup.",
+      "url": "https://github.com/Guchii/dots",
+      "homepageUrl": "",
+      "createdAt": "2021-09-06T19:39:04Z",
+      "updatedAt": "2021-12-08T05:28:46Z"
+    },
+    {
+      "name": "shidpad69",
+      "description": null,
+      "url": "https://github.com/Guchii/shidpad69",
+      "homepageUrl": "shidpad69.vercel.app",
+      "createdAt": "2022-05-05T10:44:23Z",
+      "updatedAt": "2022-11-01T21:10:22Z"
+    }
+  ]
+}
